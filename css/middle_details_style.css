@@ -1,0 +1,32 @@
+.middle-info{
+  position: relative;
+}
+
+.graphic-section{
+  float: left;
+  width: 40%;
+}
+
+.info-section{
+  float: left;
+  width:40%;
+}
+
+.info-section li{
+  list-style-type: none;
+  font-size: 1.2em;
+}
+
+.weather-info{
+  text-align: center;
+  font-size: 1.4em;
+}
+
+.temperature{
+  font-size: 2em;
+}
+
+.temperature-unit{
+  font-size: 1em;
+  vertical-align: top;
+}
