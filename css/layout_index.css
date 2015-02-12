@@ -34,7 +34,6 @@ img{
 
 
 span{
-    vertical-align: top;
-	font-size: 200%;
-	font-weight:400;
+	font-size: 2em;
+	font-weight: lighter;
 }
