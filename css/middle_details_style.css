@@ -10,8 +10,15 @@
 .middle-info >div{
   margin: 0px;
   padding: 0px;
-  width:50%;
   float: left;
+}
+
+.info-section{
+  width: 70%;
+}
+
+.graphic-section{
+  width: 30%;
 }
 
 
