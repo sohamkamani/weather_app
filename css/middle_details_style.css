@@ -22,3 +22,11 @@
   font-size: 1.4em;
 }
 
+.temperature{
+  font-size: 2em;
+}
+
+.temperature-unit{
+  font-size: 1em;
+  vertical-align: top;
+}
