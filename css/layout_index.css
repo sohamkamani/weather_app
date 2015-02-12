@@ -17,17 +17,24 @@ padding-left: 1%;
 width:100%;
 }
 
-div{
+section>div{
 	width:98%;
-	text-align: left;
 	background: #EFEBE9;
-	padding-top: 2% ;
-	padding-bottom:2%;
-    padding-left:1.5%;
-    font-size :200%;
-    border: 1px solid #D7CCC8;
-    margin: 0.5%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
-    box-shadow: -2px 2px 0px 1px #D7CCC8;
+	border: 1px solid #D7CCC8;
+    margin: 3%;
+    box-shadow: -1px 1px 0px 1px #D7CCC8;
+    padding: 1%;
+}
+
+img{
+	margin-top: 1%;
+	height: auto;
+	width: 20%;
+}
+
+
+span{
+    vertical-align: top;
+	font-size: 200%;
+	font-weight:400;
 }
