@@ -1,85 +1,155 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 .middle-info {
-  overflow: hidden;
-  background: #f0f4c3;
-  height: 40%;
+    overflow: hidden;
+    background: #f0f4c3;
+    height: 40%;
 }
 .middle-info >div {
-  margin: 0px;
-  padding: 0px;
-  float: left;
+    margin: 0px;
+    padding: 0px;
+    float: left;
 }
 .info-section {
-  width: 70%;
+    width: 70%;
 }
 .graphic-section {
-  width: 30%;
+    width: 30%;
 }
 .info-section li {
-  list-style-type: none;
-  font-size: 1.2em;
-  margin-left: 10px;
+    list-style-type: none;
+    font-size: 1.2em;
+    margin-left: 10px;
 }
 li.weather-info {
-  margin: 40px 0px;
-  text-align: center;
-  font-size: 2em;
+    margin: 40px 0px;
+    text-align: center;
+    font-size: 2em;
 }
 .temperature {
-  font-size: 3.5em;
+    font-size: 3.5em;
 }
 .temperature-unit {
-  font-size: 1.75em;
-  vertical-align: top;
+    font-size: 1.75em;
+    vertical-align: top;
 }
 .weather-icon {
-  text-align: center;
-  width: 100%;
-  border-bottom: 1px solid black;
-  padding: -20px;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid black;
+    padding: -20px;
 }
 .weather-icon img {
-  height: 180px;
-  margin: -36px;
-  width: 180px;
+    height: 180px;
+    margin: -36px;
+    width: 180px;
 }
 .big-temperature {
-  text-align: center;
-  margin-top: 26px;
+    text-align: center;
+    margin-top: 26px;
 }
 #deg-f {
-  color: #CCC;
-  cursor: pointer;
+    color: #CCC;
+    cursor: pointer;
 }
 #deg-c {
-  cursor: pointer;
+    cursor: pointer;
 }
 #container > header {
-  position: relative;
-  height: 40%;
+    position: relative;
+    height: 40%;
 }
 header h1 {
-  position: absolute;
-  bottom: 2px;
-  color: white;
-  text-shadow: 0px 0px 6px black;
-  margin: 0px;
-  padding: 10px;
+    position: absolute;
+    bottom: 2px;
+    color: white;
+    text-shadow: 0px 0px 6px black;
+    margin: 0px;
+    padding: 10px;
 }
 footer {
-  overflow: hidden;
-  height: 20%;
+    overflow: hidden;
+    height: 20%;
 }
 #container {
-  background-size: 100%;
-  position: absolute;
-  height: 100%;
-  min-height: 600px;
-  min-width: 300px;
-  width: 100%;
+    background-size: auto 100%;
+    position: absolute;
+    height: 100%;
+    min-height: 600px;
+    min-width: 300px;
+    width: 100%;
 }
-#box1, #box2, #box3 {
-  height: 100%;
+#box1,
+#box2,
+#box3 {
+    height: 100%;
+}
+. @-webkit-keyframes go-down {
+    to {
+        height: 0%;
+    }
+}
+/* Standard syntax */
+
+@keyframes go-down {
+    to {
+        height: 0%;
+    }
+}
+@-webkit-keyframes go-full {
+    to {
+        height: 100%;
+    }
+}
+/* Standard syntax */
+
+@keyframes go-full {
+    to {
+        height: 100%;
+    }
+}
+
+@-webkit-keyframes go-to-20 {
+    to {
+        height: 20%;
+    }
+}
+/* Standard syntax */
+
+@keyframes go-to-20 {
+    to {
+        height: 20%;
+    }
+}
+@-webkit-keyframes go-to-40 {
+    to {
+        height: 40%;
+    }
+}
+/* Standard syntax */
+
+@keyframes go-to-40 {
+    to {
+        height: 40%;
+    }
+}
+.go-down {
+    -webkit-animation: go-down 1.5s forwards;
+    animation: go-down 1.5s forwards;
+}
+.go-full {
+    -webkit-animation: go-full 1.5s forwards;
+    animation: go-full 1.5s forwards;
+    
+}
+
+.go-to-20 {
+    -webkit-animation: go-to-20 1.5s forwards;
+    animation: go-to-20 1.5s forwards;
+}
+
+.go-to-40 {
+    -webkit-animation: go-to-40 1.5s forwards;
+    animation: go-to-40 1.5s forwards;
 }

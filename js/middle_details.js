@@ -59,12 +59,12 @@ function show() {
         sunriseDisplay.innerHTML = data['astronomy']['sunrise'];
         sunsetDisplay.innerHTML = data['astronomy']['sunset'];
         windDisplay.innerHTML = data['wind']['speed'] + data['units']['speed'];
-        humidityDisplay.innerHTML =data['atmosphere']['humidity'] + "%";
-        weather_picture.setAttribute("src",getThemeFor(weather_status.toLowerCase())[1]);
+        humidityDisplay.innerHTML = data['atmosphere']['humidity'] + "%";
+        weather_picture.setAttribute("src", getThemeFor(weather_status.toLowerCase())[1]);
         setColorTheme(getThemeFor(weather_status.toLowerCase())[2]);
-        document.getElementById("container").style.backgroundImage="url('images/"+getThemeFor(weather_status.toLowerCase())[0]+".jpg')"
+        document.getElementById("container").style.backgroundImage = "url('images/" + getThemeFor(weather_status.toLowerCase())[0] + ".jpg')"
 
-}
+    }
 
     function setForecastDataOfElement(data, element) {
         var result = document.getElementById("result" + element);
@@ -80,56 +80,58 @@ function show() {
     }
 
 }
-function setColorTheme(colors){
-    document.getElementById("middle-info").style.backgroundColor=colors[0];
-    document.getElementById("box1").style.backgroundColor=colors[1];
-    document.getElementById("box2").style.backgroundColor=colors[2];
-    document.getElementById("box3").style.backgroundColor=colors[3];
+
+function setColorTheme(colors) {
+    document.getElementById("middle-info").style.backgroundColor = colors[0];
+    document.getElementById("box1").style.backgroundColor = colors[1];
+    document.getElementById("box2").style.backgroundColor = colors[2];
+    document.getElementById("box3").style.backgroundColor = colors[3];
 
 
 }
+
 function farToCel(f) {
     var c = (f - 32) * 5 / 9;
     return c.toFixed(1);
 }
 
 function celToFar(c) {
-    var f = (c*9)/5 + 32;
+    var f = (c * 9) / 5 + 32;
     return f.toFixed(1);
 }
 
 
 function getThemeFor(weather_text) {
-    var colorArray={
-                        "sunny":["#FFF9C4", "#FFEE58", "#FFF176", "#FFF59D"],
-                        
-                        "clear":["#C8E6C9", "#66BB6A", "#81C784", "#A5D6A7"],
+    var colorArray = {
+        "sunny": ["#FFF9C4", "#FFEE58", "#FFF176", "#FFF59D"],
 
-                        "cloud":["#F5F5F5", "#BDBDBD", "#E0E0E0", "#EEEEEE"],
-                        
-                        "fog":["#f0f4c3", "#d4e157", "#dce775", "#e6ee9c"],
-                        
-                        "rainy":["#B2EBF2", "#26C6DA", "#4DD0E1", "#80DEEA"],
-                        
-                        "snow":["#E8EAF6", "#7986CB", "#9FA8DA", "#C5CAE9"],
-                        
-                        "windy":["#DCEDC8", "#9CCC65", "#AED581", "#C5E1A5"]
-                        };
+        "clear": ["#C8E6C9", "#66BB6A", "#81C784", "#A5D6A7"],
+
+        "cloud": ["#F5F5F5", "#BDBDBD", "#E0E0E0", "#EEEEEE"],
+
+        "fog": ["#f0f4c3", "#d4e157", "#dce775", "#e6ee9c"],
+
+        "rainy": ["#B2EBF2", "#26C6DA", "#4DD0E1", "#80DEEA"],
+
+        "snow": ["#E8EAF6", "#7986CB", "#9FA8DA", "#C5CAE9"],
+
+        "windy": ["#DCEDC8", "#9CCC65", "#AED581", "#C5E1A5"]
+    };
     if (weather_text.indexOf('sun') > -1 || weather_text.indexOf('hot') > -1) {
-        return ["sunny","SVG/Sun.svg",colorArray["sunny"]]
+        return ["sunny", "SVG/Sun.svg", colorArray["sunny"]]
     } else if (weather_text.indexOf('rain') > -1) {
-        return ["rainy","SVG/Cloud-Rain.svg",colorArray["rainy"]]
+        return ["rainy", "SVG/Cloud-Rain.svg", colorArray["rainy"]]
     } else if (weather_text.indexOf('snow') > -1) {
-        return ["snow","SVG/Cloud-Snow.svg",colorArray["snow"]]
+        return ["snow", "SVG/Cloud-Snow.svg", colorArray["snow"]]
     } else if (weather_text.indexOf('fog') > -1 || weather_text.indexOf('haze') > -1) {
-        return ["fog","SVG/Cloud-Fog-Alt.svg",colorArray["fog"]]
+        return ["fog", "SVG/Cloud-Fog-Alt.svg", colorArray["fog"]]
 
     } else if (weather_text.indexOf('fair') > -1 || weather_text.indexOf('clear') > -1) {
-        return ["clear","SVG/Sun-Low.svg",colorArray["clear"]]
+        return ["clear", "SVG/Sun-Low.svg", colorArray["clear"]]
     } else if (weather_text.indexOf('wind') > -1) {
-        return ["windy","SVG/Cloud-Wind.svg",colorArray["windy"]]
+        return ["windy", "SVG/Cloud-Wind.svg", colorArray["windy"]]
     } else {
-        return ["cloud","SVG/Cloud.svg",colorArray["cloud"]]
+        return ["cloud", "SVG/Cloud.svg", colorArray["cloud"]]
     }
 }
 
@@ -142,16 +144,18 @@ function call() {
 }
 
 function init() {
-    
+
     show();
 
     var temperature = document.getElementById("temperature-display")
     var cel = document.getElementById("deg-c")
     var far = document.getElementById("deg-f")
+    var header = document.getElementById("header")
     cel.onclick = null;
     far.onclick = farClick
+    header.onclick = headerAnimationGoDown
 
-    function farClick () {
+    function farClick() {
         newTemperature = document.createTextNode(celToFar(temperature.innerHTML))
         temperature.removeChild(temperature.firstChild)
         temperature.appendChild(newTemperature)
@@ -161,7 +165,7 @@ function init() {
         cel.style.color = "#CCC"
     }
 
-    function celClick () {
+    function celClick() {
         newTemperature = document.createTextNode(farToCel(temperature.innerHTML))
         temperature.removeChild(temperature.firstChild)
         temperature.appendChild(newTemperature)
@@ -169,5 +173,32 @@ function init() {
         far.style.color = "#CCC"
         cel.onclick = null
         cel.style.color = "#000"
+    }
+
+    function headerAnimationGoDown() {
+
+        header.classList.add("go-full")
+        var middleSection = document.getElementById("middle-info")
+        middleSection.classList.add("go-down")
+        var footer = document.getElementById("footer")
+        footer.classList.add("go-down")
+        header.classList.remove("go-to-40")
+        middleSection.classList.remove("go-to-40")
+        footer.classList.remove("go-to-20")
+        header.onclick = headerAnimationGoBackUp
+
+    }
+
+    function headerAnimationGoBackUp() {
+        header.classList.remove("go-full")
+        header.classList.add("go-to-40")
+        // var middleSection = document.getElementById("middle-info")
+        // middleSection.classList.add("go-to-40")
+        // var footer = document.getElementById("footer")
+        // footer.classList.add("go-to-20")
+        
+        // middleSection.classList.remove("go-down")
+        // footer.classList.remove("go-down")
+        // header.onclick = headerAnimationGoDown
     }
 }

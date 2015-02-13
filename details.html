@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="animation_effects.css">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/layout_details.css">
     <link rel="stylesheet" type="text/css" href="css/middle_details_style.css">
@@ -13,7 +14,7 @@
 
 <body>
     <div id="container">
-        <header>
+        <header id="header">
             <h1 id="city-name">Bangalore, India</h1>
 
         </header>
@@ -23,7 +24,7 @@
                 <div class="weather-icon">
                     <img src="SVG/Cloud-Drizzle-Alt.svg" alt="sorry" id="weather-picture">
                 </div>
-                <div class="big-temperature"><span class="temperature" id="temperature-display">0</span><span id="deg-c" class="temperature-unit">&#176;C</span><span id="deg-f" class="temperature-unit">&#176;F</span>
+                <div class="big-temperature"><span class="temperature" id="temperature-display">0</span><br><span id="deg-c" class="temperature-unit">&#176;C</span><span id="deg-f" class="temperature-unit">&#176;F</span>
                 </div>
             </div>
             <div class="info-section">
@@ -41,7 +42,7 @@
                 </ul>
             </div>
         </div>
-        <footer>
+        <footer id="footer">
             <section class="box1" id="box1" onclick=call()>
                 <header id="result0"> </header>
                 <img id="img0" src="" alt="sorry">
