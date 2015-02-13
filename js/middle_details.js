@@ -49,6 +49,9 @@ function show() {
     }
 
     function setTodayData(data) {
+
+        cityName = data['location']['city'] +", "+ data['location']['country'];
+        city_name.innerHTML = cityName
         var weather_status = data['item']['condition']['text'];
         temperatureDisplay.innerHTML = far_to_deg(data['item']['condition']['temp']);
         statusDisplay.innerHTML = weather_status;
@@ -137,5 +140,4 @@ function call(){
 
 function init() {
     show();
-
 }
