@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <script>
+    var yqlCallback = function(data) {
+        var wind = data.query.results.channel.wind;
+        alert(wind.chill);
+    };
+    var getJSON = function(url) {
+        return new Promise(function(resolve, reject) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('get', url, true);
+            xhr.responseType = 'json';
+            xhr.onload = function() {
+                var status = xhr.status;
+                if (status == 200) {
+                    resolve(xhr.response);
+                } else {
+                    reject(status);
+                }
+            };
+            xhr.send();
+        });
+    };
+
+    function show() {
+        var city = document.getElementById("city_name").value;
+
+        getJSON("https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')&format=json").then(function(data) {
+            // alert('Your Json result is:  ' + data['query']['results']['channel']['item']['condition']['temp']); 
+            result.innerText = data['query']['results']['channel']['item']['condition']['temp'] + " F\n" + data['query']['results']['channel']['item']['condition']['text'];
+        }, function(status) {
+            alert('Something went wrong.');
+        });
+
+    }
+    </script>
+
+
+</head>
+
+<body>
+    <input type="text" name="city_name" id="city_name" placeholder="Enter city name">
+    <br>
+    <button name="get_weather" id="get_weather" onclick="show()">Get Weather</button>
+    <div id="result" style="color:red"></div>
+</body>
+
+</html>
