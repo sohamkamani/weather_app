@@ -1,35 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-
-<title>Details of weather</title>
+    <meta charset= "UTF-8" />
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <script type="text/javascript" src="js/bottom_details.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/layout_details.css">
+    <title>Details of weather</title>
 </head>
+
 <body>
-  <div class="container">
-    <header>
+    <div class="container">
+        <header>
 
-    </header>
-    <section class="middle_section">
+        </header>
+        <section class="middle_section">
 
-    </section>
-    <footer>
-      <section class="box1"> 
-        <header> Sunday </header>
-        <img src="SVG/Cloud-Drizzle.svg" alt="sorry" />
-        <footer > 38&deg; / 4&deg; </footer>
-      </section>
-      <section class="box1"> 
-        <header> Sunday </header>
-        <img src="SVG/Cloud-Drizzle.svg" alt="sorry" />
-        <footer > 38&deg; / 4&deg; </footer>
-      </section>
-      <section class="box1"> 
-        <header> Sunday </header>
-        <img src="SVG/Cloud-Drizzle.svg" alt="sorry" />
-        <footer > 38&deg; / 4&deg; </footer>
-      </section>
-    </footer>
-  </div>
+        </section>
+        <footer>
+            <section class="box1" onclick=c all()>
+                <header id="result1"> </header>
+                <img id="img1" src="" alt="sorry" />
+                <footer> <span id="high1"></span> <span>&deg;F/</span><span id="low1"></span><span>&deg;F</span>
+                </footer>
+            </section>
+
+            <section class="box1" onclick=c allalert()>
+                <header id="result2"> </header>
+                <img id="img2" src="" alt="sorry" />
+                <footer> <span id="high2"></span> <span>&deg;F/</span><span id="low2"></span><span>&deg;F</span>
+                </footer>
+            </section>
+
+            <section class="box1" onclick=c allalert()>
+                <header id="result3"> </header>
+                <img id="img3" src="" alt="sorry" />
+                <footer> <span id="high3"></span> <span>&deg;F/</span><span id="low3"></span><span>&deg;F</span>
+                </footer>
+            </section>
+        </footer>
+    </div>
 </body>
 
 
