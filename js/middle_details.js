@@ -52,11 +52,14 @@ function show() {
         var weather_status = data['item']['condition']['text'];
         temperature_display.innerHTML = far_to_deg(data['item']['condition']['temp']);
         status_display.innerHTML = weather_status;
+        bg_img_name = get_image_for(weather_status.toLowerCase())
         sunrise_display.innerHTML = data['astronomy']['sunrise'];
         sunset_display.innerHTML = data['astronomy']['sunset'];
         wind_display.innerHTML = data['wind']['speed'] + data['units']['speed'];
         humidity_display.innerHTML =data['atmosphere']['humidity'] + "%";
         weather_picture.setAttribute("src",get_icon_for(weather_status.toLowerCase()));
+        
+
     }
 
     function setDataBottom(data){
