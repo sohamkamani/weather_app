@@ -41,7 +41,7 @@ span{
     font-size: 4em;
     font-weight: lighter;
 }
-li:hover{
+li:active{
     -webkit-transform: scale(1.01);
     -ms-transform: scale(1.01);
     transform: scale(1.01);
