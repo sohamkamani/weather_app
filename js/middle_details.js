@@ -123,6 +123,9 @@ function get_image_for(weather_text){
         return "fog"
     }
     else if(weather_text.indexOf('fair') > -1 || weather_text.indexOf('clear') > -1){
+        // document.getElementByClassName("middle-info")[0].className.style.background="red";
+        // document.getElementById("container").style.backgroundImage="url('images/"+get_image_for(weather_status.toLowerCase())+".jpg')"
+
         return "clear"
     }
     else if(weather_text.indexOf('wind') > -1){
