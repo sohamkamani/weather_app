@@ -61,6 +61,9 @@ li.weather-info{
   margin-top: 26px;
 }
 
+#deg-f{
+  color: #CCC;
+}
 #container > header{
   min-height: 200px;
   position: relative;
