@@ -61,7 +61,7 @@ function show() {
         windDisplay.innerHTML = data['wind']['speed'] + data['units']['speed'];
         humidityDisplay.innerHTML =data['atmosphere']['humidity'] + "%";
         weather_picture.setAttribute("src",get_icon_for(weather_status.toLowerCase()));
-        
+        document.getElementById("container").style.backgroundImage="url('images/"+get_image_for(weather_status.toLowerCase())+".jpg')"
 
     }
 
