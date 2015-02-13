@@ -1,5 +1,23 @@
-.box1{
-	width: 33.33%;
-	text-align: center;
-	float: left
+footer section {
+    width: 33.33%;
+    text-align: center;
+    float: left;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+footer img {
+    height: 110px;
+    margin: -33px;
+    width: 72px;
+}
+
+.box1 {
+  background: #d4e157;
+}
+
+.box2 {
+  background: #dce775;
+}
+.box3 {
+  background: #e6ee9c;
 }

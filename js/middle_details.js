@@ -39,7 +39,12 @@ function show() {
         alert('Something went wrong.');
     });
 
-    function setData(data) {
+    function setData (data) {
+        setDataTop(data);
+        setDataBottom(data)
+    }
+
+    function setDataTop(data) {
         var weather_status = data['query']['results']['channel']['item']['condition']['text'];
         temperature_display.innerHTML = far_to_deg(data['query']['results']['channel']['item']['condition']['temp']);
         status_display.innerHTML = weather_status;
@@ -50,21 +55,15 @@ function show() {
         weather_picture.setAttribute("src",get_icon_for(weather_status.toLowerCase()));
     }
 
-}
-
-function show_bottom() {
-    var city = "bangalore";
-
-
-    getJSON("https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')&format=json").then(function(data) {
+    function setDataBottom(data){
         var result = document.getElementById("result1");
         var texts;
         var image = document.getElementById("img1");
         var high = document.getElementById("high1");
         var low = document.getElementById("low1");
         result.innerHTML = data.query.results.channel.item.forecast[0].day;
-        high.innerHTML = data.query.results.channel.item.forecast[0].high;
-        low.innerHTML = data.query.results.channel.item.forecast[0].low;
+        high.innerHTML = far_to_deg(data.query.results.channel.item.forecast[0].high);
+        low.innerHTML = far_to_deg(data.query.results.channel.item.forecast[0].low);
         texts = data.query.results.channel.item.forecast[0].text;
         image.setAttribute("src",get_icon_for(texts.toLowerCase()));
         result = document.getElementById("result2");
@@ -72,8 +71,8 @@ function show_bottom() {
         high = document.getElementById("high2");
         low = document.getElementById("low2");
         result.innerHTML = data.query.results.channel.item.forecast[1].day;
-        high.innerHTML = data.query.results.channel.item.forecast[1].high;
-        low.innerHTML = data.query.results.channel.item.forecast[1].low;
+        high.innerHTML = far_to_deg(data.query.results.channel.item.forecast[1].high);
+        low.innerHTML = far_to_deg(data.query.results.channel.item.forecast[1].low);
         texts = data.query.results.channel.item.forecast[1].text;
         image.setAttribute("src",get_icon_for(texts.toLowerCase()));
         result = document.getElementById("result3");
@@ -81,14 +80,12 @@ function show_bottom() {
         high = document.getElementById("high3");
         low = document.getElementById("low3");
         result.innerHTML = data.query.results.channel.item.forecast[2].day;
-        high.innerHTML = data.query.results.channel.item.forecast[2].high;
-        low.innerHTML = data.query.results.channel.item.forecast[2].low;
+        high.innerHTML = far_to_deg(data.query.results.channel.item.forecast[2].high);
+        low.innerHTML = far_to_deg(data.query.results.channel.item.forecast[2].low);
         texts = data.query.results.channel.item.forecast[2].text;
         image.setAttribute("src",get_icon_for(texts.toLowerCase()));
+    }
 
-    }, function(status) {
-        alert('Something went wrong.');
-    });
 }
 
 function far_to_deg(f){
