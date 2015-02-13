@@ -61,6 +61,7 @@ function show() {
         windDisplay.innerHTML = data['wind']['speed'] + data['units']['speed'];
         humidityDisplay.innerHTML =data['atmosphere']['humidity'] + "%";
         weather_picture.setAttribute("src",getThemeFor(weather_status.toLowerCase())[1]);
+        setColorTheme(getThemeFor(weather_status.toLowerCase())[2]);
         document.getElementById("container").style.backgroundImage="url('images/"+getThemeFor(weather_status.toLowerCase())[0]+".jpg')"
 
 }
@@ -79,7 +80,14 @@ function show() {
     }
 
 }
+function setColorTheme(colors){
+    document.getElementById("middle-info").style.backgroundColor=colors[0];
+    document.getElementById("box1").style.backgroundColor=colors[1];
+    document.getElementById("box2").style.backgroundColor=colors[2];
+    document.getElementById("box3").style.backgroundColor=colors[3];
 
+
+}
 function farToCel(f) {
     var c = (f - 32) * 5 / 9;
     return c.toFixed(1);
