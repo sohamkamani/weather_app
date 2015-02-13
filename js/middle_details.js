@@ -27,12 +27,12 @@ function getUrlVars() {
 
 function show() {
     var city = getUrlVars()["city"]
-    var temperature_display = document.getElementById("temperature-display")
-    var status_display = document.getElementById("status-display")
-    var sunrise_display = document.getElementById("sunrise-display")
-    var sunset_display = document.getElementById("sunset-display")
-    var wind_display = document.getElementById("wind-display")
-    var humidity_display = document.getElementById("humidity-display")
+    var temperatureDisplay = document.getElementById("temperature-display")
+    var statusDisplay = document.getElementById("status-display")
+    var sunriseDisplay = document.getElementById("sunrise-display")
+    var sunsetDisplay = document.getElementById("sunset-display")
+    var windDisplay = document.getElementById("wind-display")
+    var humidityDisplay = document.getElementById("humidity-display")
     var weather_picture = document.getElementById("weather-picture")
     var city_name = document.getElementById("city-name")
 
@@ -42,49 +42,33 @@ function show() {
 
     function setData (data_raw) {
         var data = data_raw['query']['results']['channel']
-        setDataTop(data);
-        setDataBottom(data)
+        setTodayData(data);
+        setForecastDataOfElement(data,0);
+        setForecastDataOfElement(data,1);
+        setForecastDataOfElement(data,2);
     }
 
-    function setDataTop(data) {
+    function setTodayData(data) {
         var weather_status = data['item']['condition']['text'];
-        temperature_display.innerHTML = far_to_deg(data['item']['condition']['temp']);
-        status_display.innerHTML = weather_status;
-        sunrise_display.innerHTML = data['astronomy']['sunrise'];
-        sunset_display.innerHTML = data['astronomy']['sunset'];
-        wind_display.innerHTML = data['wind']['speed'] + data['units']['speed'];
-        humidity_display.innerHTML =data['atmosphere']['humidity'] + "%";
+        temperatureDisplay.innerHTML = far_to_deg(data['item']['condition']['temp']);
+        statusDisplay.innerHTML = weather_status;
+        sunriseDisplay.innerHTML = data['astronomy']['sunrise'];
+        sunsetDisplay.innerHTML = data['astronomy']['sunset'];
+        windDisplay.innerHTML = data['wind']['speed'] + data['units']['speed'];
+        humidityDisplay.innerHTML =data['atmosphere']['humidity'] + "%";
         weather_picture.setAttribute("src",get_icon_for(weather_status.toLowerCase()));
     }
 
-    function setDataBottom(data){
-        var result = document.getElementById("result1");
+    function setForecastDataOfElement(data, element){
+        var result = document.getElementById("result" + element);
         var texts;
-        var image = document.getElementById("img1");
-        var high = document.getElementById("high1");
-        var low = document.getElementById("low1");
-        result.innerHTML = data.item.forecast[0].day;
-        high.innerHTML = far_to_deg(data.item.forecast[0].high);
-        low.innerHTML = far_to_deg(data.item.forecast[0].low);
-        texts = data.item.forecast[0].text;
-        image.setAttribute("src",get_icon_for(texts.toLowerCase()));
-        result = document.getElementById("result2");
-        image = document.getElementById("img2");
-        high = document.getElementById("high2");
-        low = document.getElementById("low2");
-        result.innerHTML = data.item.forecast[1].day;
-        high.innerHTML = far_to_deg(data.item.forecast[1].high);
-        low.innerHTML = far_to_deg(data.item.forecast[1].low);
-        texts = data.item.forecast[1].text;
-        image.setAttribute("src",get_icon_for(texts.toLowerCase()));
-        result = document.getElementById("result3");
-        image = document.getElementById("img3");
-        high = document.getElementById("high3");
-        low = document.getElementById("low3");
-        result.innerHTML = data.item.forecast[2].day;
-        high.innerHTML = far_to_deg(data.item.forecast[2].high);
-        low.innerHTML = far_to_deg(data.item.forecast[2].low);
-        texts = data.item.forecast[2].text;
+        var image = document.getElementById("img" + element);
+        var high = document.getElementById("high" + element);
+        var low = document.getElementById("low" + element);
+        result.innerHTML = data.item.forecast[element].day;
+        high.innerHTML = far_to_deg(data.item.forecast[element].high);
+        low.innerHTML = far_to_deg(data.item.forecast[element].low);
+        texts = data.item.forecast[element].text;
         image.setAttribute("src",get_icon_for(texts.toLowerCase()));
     }
 
@@ -153,5 +137,5 @@ function call(){
 
 function init() {
     show();
-    show_bottom();
+
 }
