@@ -1,9 +1,5 @@
 window.onload = init
 
-var yqlCallback = function(data) {
-    var wind = data.query.results.channel.wind;
-    alert(wind.chill);
-};
 var getJSON = function(url) {
     return new Promise(function(resolve, reject) {
         var xhr = new XMLHttpRequest();
