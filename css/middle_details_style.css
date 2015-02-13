@@ -4,8 +4,7 @@
 
 .middle-info{
   overflow: hidden;
-  background: #EFEBE9;
-}
+  background: #f0f4c3;}
 
 .middle-info >div{
   margin: 0px;
@@ -62,5 +61,22 @@ li.weather-info{
   margin-top: 26px;
 }
 
-
-
+.container > header{
+  min-height: 200px;
+  position: relative;
+}
+header h1{
+  position: absolute;
+  bottom: 2px;
+  color: white;
+  text-shadow: 0px 0px 6px black;
+  margin: 0px;
+  padding: 10px;
+}
+footer{
+  overflow: hidden;
+}
+.container{
+  background-image: url('../images/fog.jpg');
+  background-size: 100%;
+}
