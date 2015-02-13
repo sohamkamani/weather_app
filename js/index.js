@@ -92,3 +92,7 @@ for (var i = 0; i < lis.length; i++) {
 function redirect() {
     window.location = 'details.html?city=' + this.id;
 }
+
+
+
+
