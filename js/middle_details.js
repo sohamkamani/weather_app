@@ -42,11 +42,13 @@ function show() {
 
     function setData (data_raw) {
         var data = data_raw['query']['results']['channel']
-        setDataTop(data);
+        setDataTop(data)
         setDataBottom(data)
     }
 
     function setDataTop(data) {
+        cityName = data['location']['city'] +", "+ data['location']['country'];
+        city_name.innerHTML = cityName
         var weather_status = data['item']['condition']['text'];
         temperature_display.innerHTML = far_to_deg(data['item']['condition']['temp']);
         status_display.innerHTML = weather_status;
@@ -153,5 +155,4 @@ function call(){
 
 function init() {
     show();
-    show_bottom();
 }
