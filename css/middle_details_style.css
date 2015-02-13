@@ -3,6 +3,7 @@
 }
 .middle-info {
   overflow: hidden;
+<<<<<<< HEAD
   background: #f0f4c3;
   -webkit-box-ordinal-group: 3;
     -moz-box-ordinal-group: 3;
@@ -17,6 +18,8 @@
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     align-self: auto;
+=======
+>>>>>>> 219dcf717cb418accde0eef2b3b2c6035fe6c0f4
   height: 40%;
 }
 .middle-info >div {
