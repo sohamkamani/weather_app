@@ -1,0 +1,65 @@
+*{
+  box-sizing:border-box;
+}
+
+.middle-info{
+  overflow: hidden;
+  background: #f0f4c3;}
+
+.middle-info >div{
+  margin: 0px;
+  padding: 0px;
+  float: left;
+}
+
+.info-section{
+  width: 70%;
+}
+
+.graphic-section{
+  width: 30%;
+}
+
+
+
+.info-section li{
+  list-style-type: none;
+  font-size: 1.2em;
+  margin-left: 10px;
+}
+
+li.weather-info{
+  margin: 40px 0px;
+  text-align: center;
+  font-size: 2em;
+}
+
+.temperature{
+  font-size: 3.5em;
+}
+
+.temperature-unit{
+  font-size: 1.75em;
+  vertical-align: top;
+}
+
+.weather-icon{
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px solid black;
+  padding: -20px;
+}
+
+.weather-icon img{
+  height: 180px;
+    margin: -36px;
+    width: 180px;
+}
+
+.big-temperature{
+  text-align: center;
+  margin-top: 26px;
+}
+
+
+
