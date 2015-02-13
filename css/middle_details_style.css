@@ -63,9 +63,13 @@ li.weather-info{
 
 #deg-f{
   color: #CCC;
+  cursor: pointer;
 }
 
-.container > header{
+#deg-c{
+  cursor: pointer;
+}
+#container > header{
   min-height: 200px;
   position: relative;
 }
@@ -80,7 +84,6 @@ header h1{
 footer{
   overflow: hidden;
 }
-.container{
-  background-image: url('../images/fog.jpg');
+#container{
   background-size: 100%;
 }
