@@ -17,6 +17,12 @@
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     align-self: auto;
+  height: 40%;
+}
+.middle-info >div {
+  margin: 0px;
+  padding: 0px;
+  float: left;
 }
 .info-section {
   width: 70%;
@@ -64,8 +70,8 @@ li.weather-info {
   cursor: pointer;
 }
 #container > header {
-  min-height: 200px;
   position: relative;
+  height: 40%;
 }
 header h1 {
   position: absolute;
@@ -78,7 +84,7 @@ header h1 {
 footer {
   overflow: hidden;
   width: 100%;
-    -moz-box-ordinal-group: 4;
+   -moz-box-ordinal-group: 4;
     -webkit-order: 3;
     -ms-flex-order: 3;
     order: 3;
@@ -91,11 +97,9 @@ footer {
     -ms-flex-item-align: auto;
     align-self: auto;
     }
-align-self: auto;
-}
 
 #wrapper{
-  display: -webkit-box;
+   display: -webkit-box;
     display: -moz-box;
     display: -ms-inline-flexbox;
     display: -webkit-inline-flex;
@@ -107,9 +111,9 @@ align-self: auto;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
     -webkit-box-pack: start;
     -moz-box-pack: start;
     -webkit-justify-content: flex-start;
@@ -129,4 +133,16 @@ align-self: auto;
 .flex-wrapper {
     width: 100%;
     -moz-box-sizing: border-box;
-    }
+  height: 20%;
+}
+#container {
+  background-size: 100%;
+  position: absolute;
+  height: 100%;
+  min-height: 600px;
+  min-width: 300px;
+  width: 100%;
+}
+#box1, #box2, #box3 {
+  height: 100%;
+}
