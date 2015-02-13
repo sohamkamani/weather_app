@@ -3,7 +3,7 @@ body {
 }
 h1 {
     margin: 0px;
-    font-size: 400%;
+    font-size: 12em;
     font-weight: 300;
 }
 header {
@@ -31,11 +31,11 @@ ul > li {
 }
 img {
     vertical-align: middle;
-    height: 36px;
-    width: 56px;
+    height: 105px;
+    width: 135px;
 }
 span {
     vertical-align: middle;
-    font-size: 2em;
+    font-size: 6em;
     font-weight: lighter;
 }
