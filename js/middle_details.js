@@ -119,7 +119,7 @@ function getThemeFor(weather_text) {
         return ["sunny","SVG/Sun.svg",colorArray["sunny"]]
     } else if (weather_text.indexOf('rain') > -1) {
         return ["rainy","SVG/Cloud-Rain.svg",colorArray["rainy"]]
-    } else if (weather_text.indexOf('snow') > -1) {
+    } else if (weather_text.indexOf('snow') > -1 || weather_text.indexOf('ice') > -1) {
         return ["snow","SVG/Cloud-Snow.svg",colorArray["snow"]]
     } else if (weather_text.indexOf('fog') > -1 || weather_text.indexOf('haze') > -1) {
         return ["fog","SVG/Cloud-Fog-Alt.svg",colorArray["fog"]]
