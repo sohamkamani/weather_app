@@ -24,7 +24,7 @@ var getJSON = function(url) {
     });
 };
 
-function show() {
+function show_bottom() {
     var city = "bangalore";
 
 
