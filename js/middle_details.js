@@ -60,8 +60,8 @@ function show() {
         sunsetDisplay.innerHTML = data['astronomy']['sunset'];
         windDisplay.innerHTML = data['wind']['speed'] + data['units']['speed'];
         humidityDisplay.innerHTML =data['atmosphere']['humidity'] + "%";
-        weather_picture.setAttribute("src",get_icon_for(weather_status.toLowerCase()));
-        document.getElementById("container").style.backgroundImage="url('images/"+get_image_for(weather_status.toLowerCase())+".jpg')"
+        weather_picture.setAttribute("src",getThemeFor(weather_status.toLowerCase())[1]);
+        document.getElementById("container").style.backgroundImage="url('images/"+getThemeFor(weather_status.toLowerCase())[0]+".jpg')"
 
 }
 
@@ -75,7 +75,7 @@ function show() {
         high.innerHTML = farToCel(data.item.forecast[element].high);
         low.innerHTML = farToCel(data.item.forecast[element].low);
         texts = data.item.forecast[element].text;
-        image.setAttribute("src", get_icon_for(texts.toLowerCase()));
+        image.setAttribute("src", getThemeFor(texts.toLowerCase())[1]);
     }
 
 }
@@ -90,52 +90,8 @@ function celToFar(c) {
     return f.toFixed(1);
 }
 
-function get_icon_for(weather_text) {
-    if (weather_text.indexOf('sun') > -1 || weather_text.indexOf('hot') > -1) {
-        return "SVG/Sun.svg"
-    } else if (weather_text.indexOf('rain') > -1) {
-        return "SVG/Cloud-Rain.svg"
-    } else if (weather_text.indexOf('snow') > -1) {
-        return "SVG/Cloud-Snow.svg"
-    } else if (weather_text.indexOf('fog') > -1 || weather_text.indexOf('haze') > -1) {
-        return "SVG/Cloud-Fog-Alt.svg"
-    } else if (weather_text.indexOf('fair') > -1 || weather_text.indexOf('clear') > -1) {
-        return "SVG/Sun-Low.svg"
-    } else if (weather_text.indexOf('wind') > -1) {
-        return "SVG/Cloud-Wind.svg"
-    } else {
-        return "SVG/Cloud.svg"
-    }
-}
 
-function get_image_for(weather_text) {
-    if (weather_text.indexOf('sun') > -1 || weather_text.indexOf('hot') > -1) {
-        return "sunny"
-    } else if (weather_text.indexOf('rain') > -1) {
-        return "rainy"
-    } else if (weather_text.indexOf('snow') > -1) {
-        return "snow"
-    } else if (weather_text.indexOf('fog') > -1 || weather_text.indexOf('haze') > -1) {
-        return "fog"
-
-    } else if (weather_text.indexOf('fair') > -1 || weather_text.indexOf('clear') > -1) {
-        return "clear"
-    } else if (weather_text.indexOf('wind') > -1) {
-        return "windy"
-    } else {
-        return "cloud"
-    }
-}
-
-function callalert() {
-    alert("More information is not available");
-}
-
-function call() {
-    alert("Click above for more info");
-}
-
-function init() {
+function getThemeFor(weather_text) {
     var colorArray={
                         "sunny":["#FFF9C4", "#FFEE58", "#FFF176", "#FFF59D"],
                         
@@ -151,6 +107,34 @@ function init() {
                         
                         "windy":["#DCEDC8", "#9CCC65", "#AED581", "#C5E1A5"]
                         };
+    if (weather_text.indexOf('sun') > -1 || weather_text.indexOf('hot') > -1) {
+        return ["sunny","SVG/Sun.svg",colorArray["sunny"]]
+    } else if (weather_text.indexOf('rain') > -1) {
+        return ["rainy","SVG/Cloud-Rain.svg",colorArray["rainy"]]
+    } else if (weather_text.indexOf('snow') > -1) {
+        return ["snow","SVG/Cloud-Snow.svg",colorArray["snow"]]
+    } else if (weather_text.indexOf('fog') > -1 || weather_text.indexOf('haze') > -1) {
+        return ["fog","SVG/Cloud-Fog-Alt.svg",colorArray["fog"]]
+
+    } else if (weather_text.indexOf('fair') > -1 || weather_text.indexOf('clear') > -1) {
+        return ["clear","SVG/Sun-Low.svg",colorArray["clear"]]
+    } else if (weather_text.indexOf('wind') > -1) {
+        return ["windy","SVG/Cloud-Wind.svg",colorArray["windy"]]
+    } else {
+        return ["cloud","SVG/Cloud.svg",colorArray["cloud"]]
+    }
+}
+
+function callalert() {
+    alert("More information is not available");
+}
+
+function call() {
+    alert("Click above for more info");
+}
+
+function init() {
+    
     show();
 
     var temperature = document.getElementById("temperature-display")
