@@ -1,45 +1,42 @@
-body
-{
-font-family: 'Roboto Condensed', sans-serif;
+body {
+    font-family: 'Roboto Condensed', sans-serif;
 }
-h1
-{
-	margin: 0px;
-	font-size: 400%;
-	font-weight: 300;
+h1 {
+    margin: 0px;
+    font-size: 12em;
+    font-weight: 300;
 }
-header
-{
-background-color: #D7CCC8;
-color: black;
-padding-top: 4%;
-padding-left: 1%;
-width:100%;
+header {
+    background-color: #D7CCC8;
+    color: black;
+    padding-top: 4%;
+    padding-left: 1%;
+    width: 100%;
+    -webkit-box-shadow: -7px 6px 27px -1px rgba(102, 102, 102, 1);
+    -moz-box-shadow: -7px 6px 27px -1px rgba(102, 102, 102, 1);
+    box-shadow: -7px 6px 27px -1px rgba(102, 102, 102, 1);
 }
-
-section>div{
-	width:98%;
-	background: #EFEBE9;
-	border: 1px solid #D7CCC8;
-    margin: 3%;
-    box-shadow: -1px 1px 0px 1px #D7CCC8;
-    padding: 1%;
+ul {
+    padding: 0px;
 }
-
-
-img{
-	margin-top: 1%;
-	height: auto;
-	width: 20%;
+ul > li {
+    list-style-type: none;
+    background: #EFEBE9;
+    border: 1px solid #D7CCC8;
+    margin: 10px;
+    -webkit-box-shadow: -7px 6px 21px -5px rgba(102, 102, 102, 1);
+    -moz-box-shadow: -7px 6px 21px -5px rgba(102, 102, 102, 1);
+    box-shadow: -7px 6px 21px -5px rgba(102, 102, 102, 1);
+    padding: 10px;
 }
-
-span{
-    display: inline-block;
-    height: 100%;
-    vertical-align: top;
-    margin-bottom: 1%;
-    margin-top: 3.5%;
-	font-size: 6vw;
-	font-weight: lighter;
+img {
+    vertical-align: middle;
+    height: 105px;
+    width: 135px;
+}
+span {
+    vertical-align: middle;
+    font-size: 4em;
+    font-weight: lighter;
 }
 
