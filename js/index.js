@@ -1,6 +1,6 @@
 //last 4 items are add to demo the error prevention
 var cities = [{
- name: "Banglore",
+ name: "Bangalore",
  url: "flags/india.jpeg"
 },
 {
@@ -91,3 +91,14 @@ for (var i = 0, len = cities.length; i < len; i++) {
 
 var listNode = document.getElementById('city');
 listNode.appendChild(docFrag);
+
+
+
+
+lis = document.getElementsByTagName('li');
+for (var i = 0; i < lis.length; i++) {
+   lis[i].addEventListener('click',redirect,false);
+}
+function redirect(){
+    window.location='details.html?city=' + this.id;
+}
