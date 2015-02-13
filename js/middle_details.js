@@ -16,9 +16,17 @@ var getJSON = function(url) {
         xhr.send();
     });
 };
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
 
 function show() {
-    var city = "lucknow"
+    var city = getUrlVars()["city"]
     var temperature_display = document.getElementById("temperature-display")
     var status_display = document.getElementById("status-display")
     var sunrise_display = document.getElementById("sunrise-display")
