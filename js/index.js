@@ -1,7 +1,7 @@
 //last 4 items are add to demo the error prevention
 var cities = [{
     name: "Bangalore",
-    url: "flags/india.jpeg"
+    url: "flags/india.jpg"
 }, {
     name: "London",
     url: "flags/london.jpg"
@@ -10,13 +10,13 @@ var cities = [{
     url: "flags/monaco.jpg"
 }, {
     name: "New york",
-    url: "flags/nyc.jpeg"
+    url: "flags/nyc.jpg"
 }, {
     name: "Mumbai",
-    url: "flags/india.jpeg"
+    url: "flags/india.jpg"
 }, {
     name: "Paris",
-    url: "flags/paris.jpeg"
+    url: "flags/paris.jpg"
 }, {
     name: "Rio",
     url: "flags/rio.jpg"
@@ -25,10 +25,10 @@ var cities = [{
     url: "flags/sydney.jpg"
 }, {
     name: "Tokyo",
-    url: "flags/tokyo.jpeg"
+    url: "flags/tokyo.jpg"
 }, {
     name: "Washington D.C.",
-    url: "flags/nyc.jpeg"
+    url: "flags/nyc.jpg"
 }];
 
 
@@ -94,3 +94,7 @@ for (var i = 0; i < lis.length; i++) {
 function redirect() {
     window.location = 'details.html?city=' + this.id;
 }
+
+
+
+
