@@ -62,5 +62,11 @@ li.weather-info{
   margin-top: 26px;
 }
 
-
-
+header{
+  min-height: 200px;
+  position: relative;
+}
+header h2{
+  position: absolute;
+  bottom: 2px;
+}
