@@ -1,61 +1,70 @@
 //last 4 items are add to demo the error prevention
-var city = [{
-  city: "Banglore"
-}, {
-    city: "london"
+var cities = [{
+  name: "Banglore",
+  url: "flags/india.jpeg"
 },
 {
-    city: "Monaco"
+    name: "London",
+    url: "flags/london.jpg"
 },
 {
-    city: "New york"
+    name: "Monaco",
+    url: "flags/monaco.jpg"
 },
 {
-    city: "London"
+    name: "New york",
+    url: "flags/nyc.jpeg"
 },
 {
-    city: "London"
+    name: "Mumbai",
+    url: "flags/india.jpeg"
 },
 {
-    city: "London"
+    name: "Paris",
+    url: "flags/paris.jpeg"
 },
 {
-    city: "London"
+    name: "Rio",
+    url: "flags/rio.jpg"
 },
 {
-    city: "London"
+    name: "Sydney",
+    url: "flags/sydney.jpg"
 },
 {
-    city: "London"
+    name: "Tokyo",
+    url: "flags/tokyo.jpeg"
 },
-
-true, 1, "", null, {}];
+{
+    name: "Washington D.C.",
+    url: "flags/nyc.jpeg"
+}];
 
 
 //this function create each <li> node
-var createListNode = function (item) {
+var createListNode = function (city) {
     // we will simply return is object if item is not correct
     var failResponse = {
         success: false,
-        message: '| ' + JSON.stringify(item) + ' | is not a valid item, hence skipping!'
+        message: '| ' + JSON.stringify(city) + ' | is not a valid item, hence skipping!'
     };
 
     // cheching for correct data  type
-    if (item !== null && typeof item === 'object') {
+    if (city !== null && typeof city === 'object') {
         //checking if required keys are available
-        if (item.hasOwnProperty('name') && item.hasOwnProperty('surname')) {
+        if (city.hasOwnProperty('name')&&(city.hasOwnProperty('url'))) {
             var li = document.createElement('li'),
+                  image = document.createElement('img'),
+                  url = document.createTextNode(city.url),
                 nameSpan = document.createElement('span'),
-                nameText = document.createTextNode(item.name),
-                surnameSpan = document.createElement('span'),
-                surnameText = document.createTextNode(item.surname);
+                cityName = document.createTextNode(city.name);
+              
+            li.setAttribute('id', city.name);
+            image.setAttribute('src',city.url);
 
-            li.setAttribute('class', 'item');
-            nameSpan.setAttribute('class', 'name');
-            surnameSpan.setAttribute('class', 'surname');
-
-            li.appendChild(nameSpan.appendChild(nameText));
-            li.appendChild(surnameSpan.appendChild(surnameText));
+            li.appendChild(image);
+            nameSpan.appendChild(cityName);
+            li.appendChild(nameSpan);
             
             return {
                 success: true,
@@ -71,8 +80,8 @@ var createListNode = function (item) {
 
 var docFrag = document.createDocumentFragment();
 
-for (var i = 0, len = items.length; i < len; i++) {
-    var li = createListNode(items[i]);
+for (var i = 0, len = cities.length; i < len; i++) {
+    var li = createListNode(cities[i]);
     if (!li.success) {
         console.info(li.message);
     } else {
@@ -80,5 +89,7 @@ for (var i = 0, len = items.length; i < len; i++) {
     }
 }
 
-var listNode = document.getElementById('list');
+var listNode = document.getElementById('city');
 listNode.appendChild(docFrag);
+
+
