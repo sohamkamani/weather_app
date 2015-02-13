@@ -59,9 +59,11 @@ function show() {
         sunriseDisplay.innerHTML = data['astronomy']['sunrise'];
         sunsetDisplay.innerHTML = data['astronomy']['sunset'];
         windDisplay.innerHTML = data['wind']['speed'] + data['units']['speed'];
-        humidityDisplay.innerHTML = data['atmosphere']['humidity'] + "%";
-        weather_picture.setAttribute("src", get_icon_for(weather_status.toLowerCase()));
-    }
+        humidityDisplay.innerHTML =data['atmosphere']['humidity'] + "%";
+        weather_picture.setAttribute("src",get_icon_for(weather_status.toLowerCase()));
+        document.getElementById("container").style.backgroundImage="url('images/"+get_image_for(weather_status.toLowerCase())+".jpg')"
+
+}
 
     function setForecastDataOfElement(data, element) {
         var result = document.getElementById("result" + element);
