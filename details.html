@@ -22,7 +22,7 @@
                 <div class="weather-icon">
                     <img src="SVG/Cloud-Drizzle-Alt.svg" alt="sorry" id="weather-picture">
                 </div>
-                <div class="big-temperature"><span class="temperature" id="temperature-display"></span><span class="temperature-unit">&#176;C</span>
+                <div class="big-temperature"><span class="temperature" id="temperature-display"></span><span id="deg-c" class="temperature-unit">&#176;C</span><span id="deg-f" class="temperature-unit">&#176;F</span>
                 </div>
             </div>
             <div class="info-section">
@@ -42,23 +42,23 @@
         </div>
         <footer>
             <section class="box1" onclick=call()>
+                <header id="result0"> </header>
+                <img id="img0" src="" alt="sorry">
+                <footer> <span id="high0"></span> <span>&deg;C/</span><span id="low0"></span><span>&deg;C</span>
+                </footer>
+            </section>
+
+            <section class="box2" onclick=callalert()>
                 <header id="result1"> </header>
                 <img id="img1" src="" alt="sorry">
                 <footer> <span id="high1"></span> <span>&deg;C/</span><span id="low1"></span><span>&deg;C</span>
                 </footer>
             </section>
 
-            <section class="box2" onclick=callalert()>
+            <section class="box3" onclick=callalert()>
                 <header id="result2"> </header>
                 <img id="img2" src="" alt="sorry">
                 <footer> <span id="high2"></span> <span>&deg;C/</span><span id="low2"></span><span>&deg;C</span>
-                </footer>
-            </section>
-
-            <section class="box3" onclick=callalert()>
-                <header id="result3"> </header>
-                <img id="img3" src="" alt="sorry">
-                <footer> <span id="high3"></span> <span>&deg;C/</span><span id="low3"></span><span>&deg;C</span>
                 </footer>
             </section>
         </footer>
