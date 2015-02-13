@@ -61,5 +61,18 @@ li.weather-info{
   margin-top: 26px;
 }
 
-
-
+header{
+  min-height: 200px;
+  position: relative;
+}
+header h2{
+  position: absolute;
+  bottom: 2px;
+}
+footer{
+  overflow: hidden;
+}
+.container{
+  background-image: url('../images/fog.jpg');
+  background-size: 100%;
+}
