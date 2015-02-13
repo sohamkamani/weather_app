@@ -6,7 +6,7 @@
 </head>
 <body>
   <script>
-    var result = fetch('https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='bangalore')&format=json')
+    var result = fetch("https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='bangalore')&format=json")
 
     result.then(function(response) {
       console.log('response', response)
