@@ -119,6 +119,38 @@ function get_icon_for(weather_text){
     }
 }
 
+function get_image_for(weather_text){
+    if(weather_text.indexOf('sun') > -1 || weather_text.indexOf('hot') > -1){
+        return "sunny"
+    }
+    else if(weather_text.indexOf('rain') > -1){
+        return "rainy"
+    }
+    else if(weather_text.indexOf('snow') > -1){
+        return "snow"
+    }
+    else if(weather_text.indexOf('fog') > -1 || weather_text.indexOf('haze') > -1){
+        return "fog"
+    }
+    else if(weather_text.indexOf('fair') > -1 || weather_text.indexOf('clear') > -1){
+        return "clear"
+    }
+    else if(weather_text.indexOf('wind') > -1){
+        return "windy"
+    }
+    else{
+        return "cloud"
+    }
+}
+
+function callalert(){
+    alert("More information is not available");
+}
+
+function call(){
+    alert("Click above for more info");
+}
+
 function init() {
     show();
     show_bottom();

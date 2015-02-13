@@ -61,13 +61,17 @@ li.weather-info{
   margin-top: 26px;
 }
 
-header{
+.container > header{
   min-height: 200px;
   position: relative;
 }
-header h2{
+header h1{
   position: absolute;
   bottom: 2px;
+  color: white;
+  text-shadow: 0px 0px 6px black;
+  margin: 0px;
+  padding: 10px;
 }
 footer{
   overflow: hidden;
