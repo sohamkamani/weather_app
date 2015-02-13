@@ -26,14 +26,20 @@ section>div{
     padding: 1%;
 }
 
+
 img{
 	margin-top: 1%;
 	height: auto;
 	width: 20%;
 }
 
-
 span{
-	font-size: 2em;
+    display: inline-block;
+    height: 100%;
+    vertical-align: top;
+    margin-bottom: 1%;
+    margin-top: 3.5%;
+	font-size: 6vw;
 	font-weight: lighter;
 }
+
