@@ -192,13 +192,13 @@ function init() {
     function headerAnimationGoBackUp() {
         header.classList.remove("go-full")
         header.classList.add("go-to-40")
-        // var middleSection = document.getElementById("middle-info")
-        // middleSection.classList.add("go-to-40")
-        // var footer = document.getElementById("footer")
-        // footer.classList.add("go-to-20")
+         var middleSection = document.getElementById("middle-info")
+         middleSection.classList.add("go-to-40")
+         var footer = document.getElementById("footer")
+         footer.classList.add("go-to-20")
         
-        // middleSection.classList.remove("go-down")
-        // footer.classList.remove("go-down")
-        // header.onclick = headerAnimationGoDown
+         middleSection.classList.remove("go-down")
+         footer.classList.remove("go-down")
+         header.onclick = headerAnimationGoDown
     }
 }

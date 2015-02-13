@@ -5,6 +5,10 @@
     overflow: hidden;
     background: #f0f4c3;
     height: 40%;
+    -webkit-transition: height 0.5s ease-in;
+    -moz-transition: height 0.5s ease-in;
+    -o-transition: height 0.5s ease-in;
+    transition: height 0.5s ease-in;
 }
 .middle-info >div {
     margin: 0px;
@@ -56,9 +60,13 @@ li.weather-info {
 #deg-c {
     cursor: pointer;
 }
-#container > header {
+.top-header {
     position: relative;
     height: 40%;
+    -webkit-transition: height 0.5s ease-in;
+    -moz-transition: height 0.5s ease-in;
+    -o-transition: height 0.5s ease-in;
+    transition: height 0.5s ease-in;
 }
 header h1 {
     position: absolute;
@@ -71,6 +79,10 @@ header h1 {
 footer {
     overflow: hidden;
     height: 20%;
+    -webkit-transition: height 0.5s ease-in;
+    -moz-transition: height 0.5s ease-in;
+    -o-transition: height 0.5s ease-in;
+    transition: height 0.5s ease-in;
 }
 #container {
     background-size: auto 100%;
@@ -85,71 +97,17 @@ footer {
 #box3 {
     height: 100%;
 }
-. @-webkit-keyframes go-down {
-    to {
-        height: 0%;
-    }
-}
-/* Standard syntax */
 
-@keyframes go-down {
-    to {
-        height: 0%;
-    }
-}
-@-webkit-keyframes go-full {
-    to {
-        height: 100%;
-    }
-}
-/* Standard syntax */
 
-@keyframes go-full {
-    to {
-        height: 100%;
-    }
-}
-
-@-webkit-keyframes go-to-20 {
-    to {
-        height: 20%;
-    }
-}
-/* Standard syntax */
-
-@keyframes go-to-20 {
-    to {
-        height: 20%;
-    }
-}
-@-webkit-keyframes go-to-40 {
-    to {
-        height: 40%;
-    }
-}
-/* Standard syntax */
-
-@keyframes go-to-40 {
-    to {
-        height: 40%;
-    }
-}
 .go-down {
-    -webkit-animation: go-down 1.5s forwards;
-    animation: go-down 1.5s forwards;
+    height: 0%;
 }
 .go-full {
-    -webkit-animation: go-full 1.5s forwards;
-    animation: go-full 1.5s forwards;
-    
+    height: 100%;
 }
-
-.go-to-20 {
-    -webkit-animation: go-to-20 1.5s forwards;
-    animation: go-to-20 1.5s forwards;
+.go-to-20 { 
+    height: 20%;
 }
-
-.go-to-40 {
-    -webkit-animation: go-to-40 1.5s forwards;
-    animation: go-to-40 1.5s forwards;
+.go-to-40 { 
+    height: 40%;
 }
