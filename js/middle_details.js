@@ -60,8 +60,9 @@ function show() {
         sunsetDisplay.innerHTML = data['astronomy']['sunset'];
         windDisplay.innerHTML = data['wind']['speed'] + data['units']['speed'];
         humidityDisplay.innerHTML =data['atmosphere']['humidity'] + "%";
-        weather_picture.setAttribute("src",get_icon_for(weather_status.toLowerCase()));
-        document.getElementById("container").style.backgroundImage="url('images/"+get_image_for(weather_status.toLowerCase())+".jpg')"
+        weather_picture.setAttribute("src",getThemeFor(weather_status.toLowerCase())[1]);
+        setColorTheme(getThemeFor(weather_status.toLowerCase())[2]);
+        document.getElementById("container").style.backgroundImage="url('images/"+getThemeFor(weather_status.toLowerCase())[0]+".jpg')"
 
 }
 
@@ -75,11 +76,18 @@ function show() {
         high.innerHTML = farToCel(data.item.forecast[element].high);
         low.innerHTML = farToCel(data.item.forecast[element].low);
         texts = data.item.forecast[element].text;
-        image.setAttribute("src", get_icon_for(texts.toLowerCase()));
+        image.setAttribute("src", getThemeFor(texts.toLowerCase())[1]);
     }
 
 }
+function setColorTheme(colors){
+    document.getElementById("middle-info").style.backgroundColor=colors[0];
+    document.getElementById("box1").style.backgroundColor=colors[1];
+    document.getElementById("box2").style.backgroundColor=colors[2];
+    document.getElementById("box3").style.backgroundColor=colors[3];
 
+
+}
 function farToCel(f) {
     var c = (f - 32) * 5 / 9;
     return c.toFixed(1);
@@ -90,39 +98,38 @@ function celToFar(c) {
     return f.toFixed(1);
 }
 
-function get_icon_for(weather_text) {
-    if (weather_text.indexOf('sun') > -1 || weather_text.indexOf('hot') > -1) {
-        return "SVG/Sun.svg"
-    } else if (weather_text.indexOf('rain') > -1) {
-        return "SVG/Cloud-Rain.svg"
-    } else if (weather_text.indexOf('snow') > -1) {
-        return "SVG/Cloud-Snow.svg"
-    } else if (weather_text.indexOf('fog') > -1 || weather_text.indexOf('haze') > -1) {
-        return "SVG/Cloud-Fog-Alt.svg"
-    } else if (weather_text.indexOf('fair') > -1 || weather_text.indexOf('clear') > -1) {
-        return "SVG/Sun-Low.svg"
-    } else if (weather_text.indexOf('wind') > -1) {
-        return "SVG/Cloud-Wind.svg"
-    } else {
-        return "SVG/Cloud.svg"
-    }
-}
 
-function get_image_for(weather_text) {
+function getThemeFor(weather_text) {
+    var colorArray={
+                        "sunny":["#FFF9C4", "#FFEE58", "#FFF176", "#FFF59D"],
+                        
+                        "clear":["#C8E6C9", "#66BB6A", "#81C784", "#A5D6A7"],
+
+                        "cloud":["#F5F5F5", "#BDBDBD", "#E0E0E0", "#EEEEEE"],
+                        
+                        "fog":["#f0f4c3", "#d4e157", "#dce775", "#e6ee9c"],
+                        
+                        "rainy":["#B2EBF2", "#26C6DA", "#4DD0E1", "#80DEEA"],
+                        
+                        "snow":["#E8EAF6", "#7986CB", "#9FA8DA", "#C5CAE9"],
+                        
+                        "windy":["#DCEDC8", "#9CCC65", "#AED581", "#C5E1A5"]
+                        };
     if (weather_text.indexOf('sun') > -1 || weather_text.indexOf('hot') > -1) {
-        return "sunny"
+        return ["sunny","SVG/Sun.svg",colorArray["sunny"]]
     } else if (weather_text.indexOf('rain') > -1) {
-        return "rainy"
+        return ["rainy","SVG/Cloud-Rain.svg",colorArray["rainy"]]
     } else if (weather_text.indexOf('snow') > -1) {
-        return "snow"
+        return ["snow","SVG/Cloud-Snow.svg",colorArray["snow"]]
     } else if (weather_text.indexOf('fog') > -1 || weather_text.indexOf('haze') > -1) {
-        return "fog"
+        return ["fog","SVG/Cloud-Fog-Alt.svg",colorArray["fog"]]
+
     } else if (weather_text.indexOf('fair') > -1 || weather_text.indexOf('clear') > -1) {
-        return "clear"
+        return ["clear","SVG/Sun-Low.svg",colorArray["clear"]]
     } else if (weather_text.indexOf('wind') > -1) {
-        return "windy"
+        return ["windy","SVG/Cloud-Wind.svg",colorArray["windy"]]
     } else {
-        return "cloud"
+        return ["cloud","SVG/Cloud.svg",colorArray["cloud"]]
     }
 }
 
@@ -135,6 +142,7 @@ function call() {
 }
 
 function init() {
+    
     show();
 
     var temperature = document.getElementById("temperature-display")
