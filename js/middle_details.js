@@ -39,7 +39,12 @@ function show() {
         alert('Something went wrong.');
     });
 
-    function setData(data) {
+    function setData (data) {
+        setDataTop(data);
+        setDataBottom(data)
+    }
+
+    function setDataTop(data) {
         var weather_status = data['query']['results']['channel']['item']['condition']['text'];
         temperature_display.innerHTML = far_to_deg(data['query']['results']['channel']['item']['condition']['temp']);
         status_display.innerHTML = weather_status;
@@ -48,6 +53,37 @@ function show() {
         wind_display.innerHTML = data['query']['results']['channel']['wind']['speed'] + data['query']['results']['channel']['units']['speed'];
         humidity_display.innerHTML =data['query']['results']['channel']['atmosphere']['humidity'] + "%";
         weather_picture.setAttribute("src",get_icon_for(weather_status.toLowerCase()));
+    }
+
+    function setDataBottom(data){
+        var result = document.getElementById("result1");
+        var texts;
+        var image = document.getElementById("img1");
+        var high = document.getElementById("high1");
+        var low = document.getElementById("low1");
+        result.innerHTML = data.query.results.channel.item.forecast[0].day;
+        high.innerHTML = far_to_deg(data.query.results.channel.item.forecast[0].high);
+        low.innerHTML = far_to_deg(data.query.results.channel.item.forecast[0].low);
+        texts = data.query.results.channel.item.forecast[0].text;
+        image.setAttribute("src",get_icon_for(texts.toLowerCase()));
+        result = document.getElementById("result2");
+        image = document.getElementById("img2");
+        high = document.getElementById("high2");
+        low = document.getElementById("low2");
+        result.innerHTML = data.query.results.channel.item.forecast[1].day;
+        high.innerHTML = far_to_deg(data.query.results.channel.item.forecast[1].high);
+        low.innerHTML = far_to_deg(data.query.results.channel.item.forecast[1].low);
+        texts = data.query.results.channel.item.forecast[1].text;
+        image.setAttribute("src",get_icon_for(texts.toLowerCase()));
+        result = document.getElementById("result3");
+        image = document.getElementById("img3");
+        high = document.getElementById("high3");
+        low = document.getElementById("low3");
+        result.innerHTML = data.query.results.channel.item.forecast[2].day;
+        high.innerHTML = far_to_deg(data.query.results.channel.item.forecast[2].high);
+        low.innerHTML = far_to_deg(data.query.results.channel.item.forecast[2].low);
+        texts = data.query.results.channel.item.forecast[2].text;
+        image.setAttribute("src",get_icon_for(texts.toLowerCase()));
     }
 
 }
@@ -83,4 +119,5 @@ function get_icon_for(weather_text){
 
 function init() {
     show();
+    show_bottom();
 }

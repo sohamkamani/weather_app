@@ -2,10 +2,11 @@
 <html>
 
 <head>
-    <meta charset= "UTF-8" />
-  <link rel="stylesheet" type="text/css" href="css/normalize.css">
-  <script type="text/javascript" src="js/bottom_details.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/layout_details.css">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/layout_details.css">
+    <link rel="stylesheet" type="text/css" href="css/middle_details_style.css">
+    <script type="text/javascript" src="js/middle_details.js"></script>
     <title>Details of weather</title>
 </head>
 
@@ -14,28 +15,49 @@
         <header>
 
         </header>
-        <section class="middle_section">
+        <div class="middle-info">
 
-        </section>
+            <div class="graphic-section">
+                <div class="weather-icon">
+                    <img src="SVG/Cloud-Drizzle-Alt.svg" alt="sorry" id="weather-picture">
+                </div>
+                <div class="big-temperature"><span class="temperature" id="temperature-display"></span><span class="temperature-unit">&#176;C</span>
+                </div>
+            </div>
+            <div class="info-section">
+                <ul>
+                    <li class="weather-info"><strong id="status-display"> </strong>
+                    </li>
+                    <li><strong>Sunrise: </strong><span id="sunrise-display"> </span>
+                    </li>
+                    <li><strong>Sunset: </strong><span id="sunset-display"> </span>
+                    </li>
+                    <li><strong>Wind: </strong><span id="wind-display"> </span>
+                    </li>
+                    <li><strong>Humidity: </strong><span id="humidity-display"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <footer>
             <section class="box1" onclick=c all()>
                 <header id="result1"> </header>
-                <img id="img1" src="" alt="sorry" />
-                <footer> <span id="high1"></span> <span>&deg;F/</span><span id="low1"></span><span>&deg;F</span>
+                <img id="img1" src="" alt="sorry">
+                <footer> <span id="high1"></span> <span>&deg;C/</span><span id="low1"></span><span>&deg;C</span>
                 </footer>
             </section>
 
-            <section class="box1" onclick=c allalert()>
+            <section class="box2" onclick=c allalert()>
                 <header id="result2"> </header>
-                <img id="img2" src="" alt="sorry" />
-                <footer> <span id="high2"></span> <span>&deg;F/</span><span id="low2"></span><span>&deg;F</span>
+                <img id="img2" src="" alt="sorry">
+                <footer> <span id="high2"></span> <span>&deg;C/</span><span id="low2"></span><span>&deg;C</span>
                 </footer>
             </section>
 
-            <section class="box1" onclick=c allalert()>
+            <section class="box3" onclick=c allalert()>
                 <header id="result3"> </header>
-                <img id="img3" src="" alt="sorry" />
-                <footer> <span id="high3"></span> <span>&deg;F/</span><span id="low3"></span><span>&deg;F</span>
+                <img id="img3" src="" alt="sorry">
+                <footer> <span id="high3"></span> <span>&deg;C/</span><span id="low3"></span><span>&deg;C</span>
                 </footer>
             </section>
         </footer>
