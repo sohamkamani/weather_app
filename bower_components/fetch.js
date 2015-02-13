@@ -5,23 +5,6 @@
     return
   }
 
-  function normalizeName(name) {
-    if (typeof name !== 'string') {
-      name = name.toString();
-    }
-    if (/[^a-z0-9\-#$%&'*+.\^_`|~]/i.test(name)) {
-      throw new TypeError('Invalid character in header field name')
-    }
-    return name.toLowerCase()
-  }
-
-  function normalizeValue(value) {
-    if (typeof value !== 'string') {
-      value = value.toString();
-    }
-    return value
-  }
-
   function Headers(headers) {
     this.map = {}
 
@@ -41,8 +24,7 @@
   }
 
   Headers.prototype.append = function(name, value) {
-    name = normalizeName(name)
-    value = normalizeValue(value)
+    name = name.toLowerCase()
     var list = this.map[name]
     if (!list) {
       list = []
@@ -52,24 +34,24 @@
   }
 
   Headers.prototype['delete'] = function(name) {
-    delete this.map[normalizeName(name)]
+    delete this.map[name.toLowerCase()]
   }
 
   Headers.prototype.get = function(name) {
-    var values = this.map[normalizeName(name)]
+    var values = this.map[name.toLowerCase()]
     return values ? values[0] : null
   }
 
   Headers.prototype.getAll = function(name) {
-    return this.map[normalizeName(name)] || []
+    return this.map[name.toLowerCase()] || []
   }
 
   Headers.prototype.has = function(name) {
-    return this.map.hasOwnProperty(normalizeName(name))
+    return this.map.hasOwnProperty(name.toLowerCase())
   }
 
   Headers.prototype.set = function(name, value) {
-    this.map[normalizeName(name)] = [normalizeValue(value)]
+    this.map[name.toLowerCase()] = [value]
   }
 
   // Instead of iterable for now.
@@ -299,7 +281,6 @@
       }
 
       xhr.open(self.method, self.url, true)
-
       if ('responseType' in xhr && support.blob) {
         xhr.responseType = 'blob'
       }
@@ -325,7 +306,6 @@
     this.type = 'default'
     this.url = null
     this.status = options.status
-    this.ok = this.status >= 200 && this.status < 300
     this.statusText = options.statusText
     this.headers = options.headers
     this.url = options.url || ''
