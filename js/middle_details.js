@@ -52,6 +52,45 @@ function show() {
 
 }
 
+function show_bottom() {
+    var city = "bangalore";
+
+
+    getJSON("https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')&format=json").then(function(data) {
+        var result = document.getElementById("result1");
+        var texts;
+        var image = document.getElementById("img1");
+        var high = document.getElementById("high1");
+        var low = document.getElementById("low1");
+        result.innerHTML = data.query.results.channel.item.forecast[0].day;
+        high.innerHTML = data.query.results.channel.item.forecast[0].high;
+        low.innerHTML = data.query.results.channel.item.forecast[0].low;
+        texts = data.query.results.channel.item.forecast[0].text;
+        image.setAttribute("src",get_icon_for(texts.toLowerCase()));
+        result = document.getElementById("result2");
+        image = document.getElementById("img2");
+        high = document.getElementById("high2");
+        low = document.getElementById("low2");
+        result.innerHTML = data.query.results.channel.item.forecast[1].day;
+        high.innerHTML = data.query.results.channel.item.forecast[1].high;
+        low.innerHTML = data.query.results.channel.item.forecast[1].low;
+        texts = data.query.results.channel.item.forecast[1].text;
+        image.setAttribute("src",get_icon_for(texts.toLowerCase()));
+        result = document.getElementById("result3");
+        image = document.getElementById("img3");
+        high = document.getElementById("high3");
+        low = document.getElementById("low3");
+        result.innerHTML = data.query.results.channel.item.forecast[2].day;
+        high.innerHTML = data.query.results.channel.item.forecast[2].high;
+        low.innerHTML = data.query.results.channel.item.forecast[2].low;
+        texts = data.query.results.channel.item.forecast[2].text;
+        image.setAttribute("src",get_icon_for(texts.toLowerCase()));
+
+    }, function(status) {
+        alert('Something went wrong.');
+    });
+}
+
 function far_to_deg(f){
     var c = (f-32)*5/9;
     return Math.round(c);
@@ -83,4 +122,5 @@ function get_icon_for(weather_text){
 
 function init() {
     show();
+    show_bottom();
 }
