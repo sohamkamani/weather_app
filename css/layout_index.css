@@ -28,6 +28,8 @@ ul > li {
     -moz-box-shadow: -7px 6px 21px -5px rgba(102, 102, 102, 1);
     box-shadow: -7px 6px 21px -5px rgba(102, 102, 102, 1);
     padding: 10px;
+    -webkit-transition: background 2s  /* For Safari 3.1 to 6.0 */
+    transition: background 2s,width 2s;
 }
 img {
     vertical-align: middle;
@@ -39,4 +41,10 @@ span {
     font-size: 4em;
     font-weight: lighter;
 }
+li:hover{
+    -webkit-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    transform: scale(1.01);
+}
+
 
