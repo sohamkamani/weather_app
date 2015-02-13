@@ -1,79 +1,80 @@
-*{
-  box-sizing:border-box;
+* {
+  box-sizing: border-box;
 }
-
-.middle-info{
+.middle-info {
   overflow: hidden;
-  background: #f0f4c3;}
+  background: #f0f4c3;
+  -webkit-box-ordinal-group: 3;
+    -moz-box-ordinal-group: 3;
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
 
-.middle-info >div{
+}
+.middle-info >div {
   margin: 0px;
   padding: 0px;
   float: left;
-}
 
-.info-section{
+}
+.info-section {
   width: 70%;
 }
-
-.graphic-section{
+.graphic-section {
   width: 30%;
 }
-
-
-
-.info-section li{
+.info-section li {
   list-style-type: none;
   font-size: 1.2em;
   margin-left: 10px;
 }
-
-li.weather-info{
+li.weather-info {
   margin: 40px 0px;
   text-align: center;
   font-size: 2em;
 }
-
-.temperature{
+.temperature {
   font-size: 3.5em;
 }
-
-.temperature-unit{
+.temperature-unit {
   font-size: 1.75em;
   vertical-align: top;
 }
-
-.weather-icon{
+.weather-icon {
   text-align: center;
   width: 100%;
   border-bottom: 1px solid black;
   padding: -20px;
 }
-
-.weather-icon img{
+.weather-icon img {
   height: 180px;
-    margin: -36px;
-    width: 180px;
+  margin: -36px;
+  width: 180px;
 }
-
-.big-temperature{
+.big-temperature {
   text-align: center;
   margin-top: 26px;
 }
-
-#deg-f{
+#deg-f {
   color: #CCC;
   cursor: pointer;
 }
-
-#deg-c{
+#deg-c {
   cursor: pointer;
 }
-#container > header{
+#container > header {
   min-height: 200px;
   position: relative;
 }
-header h1{
+header h1 {
   position: absolute;
   bottom: 2px;
   color: white;
@@ -81,9 +82,56 @@ header h1{
   margin: 0px;
   padding: 10px;
 }
-footer{
+footer {
   overflow: hidden;
+
+    -webkit-box-ordinal-group: 4;
+    -moz-box-ordinal-group: 4;
+    -webkit-order: 3;
+    -ms-flex-order: 3;
+    order: 3;
+    -webkit-box-flex: 2;
+    -moz-box-flex: 2;
+    -webkit-flex: 2 1 auto;
+    -ms-flex: 2 1 auto;
+    flex: 2 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
 }
-#container{
-  background-size: 100%;
+#container {
+background-size: 100%;
+}
+
+
+#wrapper
+{
+  display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-box-align: stretch;
+    -moz-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
 }
