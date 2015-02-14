@@ -8,7 +8,7 @@ h1 {
 }
 header {
     position: fixed;
-    top:0px;
+    top: 0px;
     background-color: #303F9F;
     color: black;
     padding-top: 1.5%;
@@ -20,8 +20,6 @@ header {
     box-shadow: -7px 6px 27px -10px rgba(102, 102, 102, 1);
     font-family: Roboto;
     color: white;
-
-
 }
 ul {
     padding: 0px;
@@ -36,9 +34,7 @@ ul > li {
     -moz-box-shadow: -7px 6px 21px -10px rgba(102, 102, 102, 1);
     box-shadow: -7px 6px 21px -10px rgba(102, 102, 102, 1);
     padding: 10px;
-
 }
-
 img {
     vertical-align: middle;
     width: 3em;
@@ -51,35 +47,29 @@ span {
     font-weight: lighter;
     margin-left: 20px;
 }
-
-
-li:hover
-{
-    -webkit-transform: scale(1.02);
-    -ms-transform: scale(1.02);
-    transform: scale(1.02);
-
-    -webkit-animation: list-go-bright 2s forwards;
-   /* Chrome, Safari, Opera */
-   
-   animation: list-go-bright 2s forwards;
+li:hover,li:active {
+    -webkit-animation: list-go-bright 0.5s forwards;  
+    animation: list-go-bright 0.5s forwards;
 }
-
 @-webkit-keyframes list-go-bright {
-   to {
-    -webkit-box-shadow: -7px 6px 21px -1px rgba(102, 102, 102, 1);
-    -moz-box-shadow: -7px 6px 21px -1px rgba(102, 102, 102, 1);
-    box-shadow: -7px 6px 21px -1px rgba(102, 102, 102, 1);
-   }
+    to {
+        -webkit-transform: scale(1.02);
+        -ms-transform: scale(1.02);
+        transform: scale(1.02);
+        -webkit-box-shadow: -7px 6px 21px -1px rgba(102, 102, 102, 1);
+        -moz-box-shadow: -7px 6px 21px -1px rgba(102, 102, 102, 1);
+        box-shadow: -7px 6px 21px -1px rgba(102, 102, 102, 1);
+    }
 }
 /* Standard syntax */
 
 @keyframes list-go-bright {
-   to {
-       -webkit-box-shadow: -7px 6px 21px -1px rgba(102, 102, 102, 1);
-    -moz-box-shadow: -7px 6px 21px -1px rgba(102, 102, 102, 1);
-    box-shadow: -7px 6px 21px -1px rgba(102, 102, 102, 1);
-   }
+    to {
+        -webkit-transform: scale(1.02);
+        -ms-transform: scale(1.02);
+        transform: scale(1.02);
+        -webkit-box-shadow: -7px 6px 21px -1px rgba(102, 102, 102, 1);
+        -moz-box-shadow: -7px 6px 21px -1px rgba(102, 102, 102, 1);
+        box-shadow: -7px 6px 21px -1px rgba(102, 102, 102, 1);
+    }
 }
-
-
