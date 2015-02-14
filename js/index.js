@@ -27,7 +27,7 @@ var cities = [{
     name: "Tokyo",
     url: "flags/tokyo.jpg"
 }, {
-    name: "Washington D.C.",
+    name: "Miami",
     url: "flags/nyc.jpg"
 }];
 
