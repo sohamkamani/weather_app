@@ -83,7 +83,7 @@ li.weather-info {
   flex : 1 1 auto;
   align-self: auto;
   min-width: 0;
-  min-height: auto;
+  min-height: 100px;
 }
 #deg-f {
   color: #CCC;
