@@ -1,0 +1,11 @@
+/* Chrome, Safari, Opera */
+@-webkit-keyframes middle-go-down {
+    from {height:40%;}
+    to {height:0%;}
+}
+
+/* Standard syntax */
+@keyframes middle-go-down {
+    from {height:40%;}
+    to {height:0%;}
+}
