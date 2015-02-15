@@ -13,17 +13,30 @@
   overflow: hidden;
   background: #fff;
   height: 40%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-content : center;
+  align-items: stretch;
 }
-.middle-info >div {
+/*.middle-info >div {
   margin: 0px;
   padding: 0px;
   float: left;
-}
+}*/
 .info-section {
-  width: 70%;
+  order: 2;
+  flex : 1.5 1 auto;
+  align-self: auto;
+  min-width: 0;
+  min-height: auto;
 }
 .graphic-section {
-  width: 30%;
+  order: 1;
+  flex : 1 1 auto;
+  align-self: auto;
+  min-width: 0;
+  min-height: auto;
 }
 .info-section li {
   list-style-type: none;
