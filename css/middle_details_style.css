@@ -37,6 +37,12 @@
   align-self: auto;
   min-width: 0;
   min-height: auto;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-content : center;
+  align-items: stretch;
 }
 .info-section li {
   list-style-type: none;
@@ -60,15 +66,24 @@ li.weather-info {
   width: 100%;
   border-bottom: 1px solid black;
   padding: -20px;
+  order: 1;
+  flex : 1 1 auto;
+  align-self: auto;
+  min-width: 0;
+  min-height: 0;
 }
 .weather-icon img {
-  height: 180px;
-  margin: -36px;
+  height: 100%;
   width: 180px;
 }
 .big-temperature {
   text-align: center;
   margin-top: 26px;
+  order: 2;
+  flex : 1 1 auto;
+  align-self: auto;
+  min-width: 0;
+  min-height: auto;
 }
 #deg-f {
   color: #CCC;
