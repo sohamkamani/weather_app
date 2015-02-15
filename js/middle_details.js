@@ -118,39 +118,37 @@ function celToFar(c) {
 
 
 function getThemeFor(weather_text) {
-  var colorArray = {
-    "sunny": ["#FFF9C4", "#FFEE58", "#FFF176", "#FFF59D"],
+    var colorArray={
+                        "sunny":["#FFF9C4", "#FFEE58", "#FFF176", "#FFF59D"],
+                        
+                        "clear":["#C8E6C9", "#66BB6A", "#81C784", "#A5D6A7"],
 
-    "clear": ["#C8E6C9", "#66BB6A", "#81C784", "#A5D6A7"],
+                        "cloud":["#F5F5F5", "#BDBDBD", "#E0E0E0", "#EEEEEE"],
+                        
+                        "fog":["#f0f4c3", "#d4e157", "#dce775", "#e6ee9c"],
+                        
+                        "rainy":["#B2EBF2", "#26C6DA", "#4DD0E1", "#80DEEA"],
+                        
+                        "snow":["#E8EAF6", "#7986CB", "#9FA8DA", "#C5CAE9"],
+                        
+                        "windy":["#DCEDC8", "#9CCC65", "#AED581", "#C5E1A5"]
+                        };
+    if (weather_text.indexOf('sun') > -1 || weather_text.indexOf('hot') > -1) {
+        return ["sunny","SVG/Sun.svg",colorArray["sunny"]]
+    } else if (weather_text.indexOf('rain') > -1) {
+        return ["rainy","SVG/Cloud-Rain.svg",colorArray["rainy"]]
+    } else if (weather_text.indexOf('snow') > -1 || weather_text.indexOf('ice') > -1) {
+        return ["snow","SVG/Cloud-Snow.svg",colorArray["snow"]]
+    } else if (weather_text.indexOf('fog') > -1 || weather_text.indexOf('haze') > -1) {
+        return ["fog","SVG/Cloud-Fog-Alt.svg",colorArray["fog"]]
 
-    "cloud": ["#F5F5F5", "#BDBDBD", "#E0E0E0", "#EEEEEE"],
-
-    "fog": ["#f0f4c3", "#d4e157", "#dce775", "#e6ee9c"],
-
-    "rainy": ["#B2EBF2", "#26C6DA", "#4DD0E1", "#80DEEA"],
-
-    "snow": ["#E8EAF6", "#7986CB", "#9FA8DA", "#C5CAE9"],
-
-    "windy": ["#DCEDC8", "#9CCC65", "#AED581", "#C5E1A5"]
-  };
-  if (weather_text.indexOf('sun') > -1 || weather_text.indexOf('hot') > -1) {
-    return ["sunny", "SVG/Sun.svg", colorArray["sunny"]]
-  } else if (weather_text.indexOf('rain') > -1) {
-    return ["rainy", "SVG/Cloud-Rain.svg", colorArray["rainy"]]
-  } else if (weather_text.indexOf('snow') > -1) {
-    return ["snow", "SVG/Cloud-Snow.svg", colorArray["snow"]]
-  } else if (weather_text.indexOf('fog') > -1 || weather_text.indexOf('haze') >
-    -1) {
-    return ["fog", "SVG/Cloud-Fog-Alt.svg", colorArray["fog"]]
-
-  } else if (weather_text.indexOf('fair') > -1 || weather_text.indexOf(
-      'clear') > -1) {
-    return ["clear", "SVG/Sun-Low.svg", colorArray["clear"]]
-  } else if (weather_text.indexOf('wind') > -1) {
-    return ["windy", "SVG/Cloud-Wind.svg", colorArray["windy"]]
-  } else {
-    return ["cloud", "SVG/Cloud.svg", colorArray["cloud"]]
-  }
+    } else if (weather_text.indexOf('fair') > -1 || weather_text.indexOf('clear') > -1) {
+        return ["clear","SVG/Sun-Low.svg",colorArray["clear"]]
+    } else if (weather_text.indexOf('wind') > -1) {
+        return ["windy","SVG/Cloud-Wind.svg",colorArray["windy"]]
+    } else {
+        return ["cloud","SVG/Cloud.svg",colorArray["cloud"]]
+    }
 }
 
 function callalert() {
