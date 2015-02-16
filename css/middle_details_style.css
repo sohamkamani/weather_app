@@ -19,17 +19,36 @@ body{
   overflow: hidden;
   background: #fff;
   height: 40%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-content : center;
+  align-items: stretch;
 }
-.middle-info >div {
+/*.middle-info >div {
   margin: 0px;
   padding: 0px;
   float: left;
-}
+}*/
 .info-section {
-  width: 70%;
+  order: 2;
+  flex : 3 1 auto;
+  align-self: auto;
+  min-width: 0;
+  min-height: auto;
 }
 .graphic-section {
-  width: 30%;
+  order: 1;
+  flex : 1 1 auto;
+  align-self: auto;
+  min-width: 0;
+  min-height: auto;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-content : center;
+  align-items: stretch;
 }
 .info-section li {
   list-style-type: none;
@@ -53,15 +72,24 @@ li.weather-info {
   width: 100%;
   border-bottom: 1px solid black;
   padding: -20px;
+  order: 1;
+  flex : 1 1 auto;
+  align-self: auto;
+  min-width: 0;
+  min-height: 0;
 }
 .weather-icon img {
-  height: 180px;
-  margin: -36px;
+  height: 100%;
   width: 180px;
 }
 .big-temperature {
   text-align: center;
   margin-top: 26px;
+  order: 2;
+  flex : 1 1 auto;
+  align-self: auto;
+  min-width: 0;
+  min-height: 100px;
 }
 #deg-f {
   color: #CCC;
@@ -69,6 +97,10 @@ li.weather-info {
 }
 #deg-c {
   cursor: pointer;
+}
+
+.hidden-list{
+  display: none;
 }
 .top-header {
   position: relative;
@@ -114,4 +146,8 @@ footer {
   -webkit-box-shadow: 0px 0px 29px 7px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 29px 7px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 29px 7px rgba(0, 0, 0, 0.75);
+}
+
+.make-block{
+  display: block;
 }

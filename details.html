@@ -2,77 +2,87 @@
 <html>
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="css/cloudAnimation.css">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="css/layout_details.css">
-    <link rel="stylesheet" type="text/css" href="css/middle_details_style.css">
-    <script type="text/javascript" src="js/middle_details.js"></script>
-    <title>Details of weather</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="css/cloudAnimation.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto:100' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/layout_details.css">
+  <link rel="stylesheet" type="text/css" href="css/middle_details_style.css">
+  <script type="text/javascript" src="js/middle_details.js"></script>
+  <title>Details of weather</title>
 </head>
 
 <body>
-    <div class="animationContainer">
-        <div class="rainy"></div>
-        <div class="headText">
-          Loading...
-        </div>
+<div class="animationContainer">
+      <div class="rainy"></div>
+      <div class="headText">
+        Loading...
+      </div>
     </div>
-    <div id="container">
-        <header id="header" class="top-header transition">
-            <h1 id="city-name">Loading...</h1>
+  <div id="container">
+    
+    <header id="header" class="top-header transition">
+      <h1 id="city-name">Loading...</h1>
 
-        </header>
-        <div class="middle-info transition" id="middle-info">
+    </header>
+    <div class="middle-info transition" id="middle-info">
 
-            <div class="graphic-section">
-                <div class="weather-icon" id="weather-icon">
-                    <img src="" alt="sorry" id="weather-picture">
-                </div>
-                <div class="big-temperature"><span class="temperature" id="temperature-display">0</span>
-                    <br><span id="deg-c" class="temperature-unit">&#176;C</span><span id="deg-f" class="temperature-unit">&#176;F</span>
-                </div>
-            </div>
-            <div class="info-section" id="info-section">
-                <ul>
-                    <li class="weather-info"><strong id="status-display">Loading...</strong>
-                    </li>
-                    <li><strong>Sunrise: </strong><span id="sunrise-display">Loading...</span>
-                    </li>
-                    <li><strong>Sunset: </strong><span id="sunset-display">Loading...</span>
-                    </li>
-                    <li><strong>Wind: </strong><span id="wind-display">Loading...</span>
-                    </li>
-                    <li><strong>Humidity: </strong><span id="humidity-display">Loading...</span>
-                    </li>
-                </ul>
-            </div>
+      <div class="graphic-section">
+        <div class="weather-icon" id="weather-icon">
+          <img src="" alt="sorry" id="weather-picture">
         </div>
-        <footer id="footer" class="transition">
-            <section class="box1" id="box1" onclick=call()>
-                <header id="result0">Loading...</header>
-                <img id="img0" src="" alt="sorry">
-                <footer> <span id="high0">Loading...</span> <span>&deg;C/</span><span id="low0">Loading...</span><span>&deg;C</span>
-                </footer>
-            </section>
-
-            <section class="box2" id="box2" onclick=callalert()>
-                <header id="result1">Loading...</header>
-                <img id="img1" src="" alt="sorry">
-                <footer> <span id="high1">Loading...</span> <span>&deg;C/</span><span id="low1">Loading...</span><span>&deg;C</span>
-                </footer>
-            </section>
-
-            <section class="box3" id="box3" onclick=callalert()>
-                <header id="result2">Loading...</header>
-                <img id="img2" src="" alt="sorry">
-                <footer> <span id="high2">Loading...</span> <span>&deg;C/</span><span id="low2">Loading...</span><span>&deg;C</span>
-                </footer>
-            </section>
+        <div class="big-temperature"><span class="temperature" id="temperature-display">0</span>
+          <br><span id="deg-c" class="temperature-unit">&#176;C</span><span id="deg-f"
+          class="temperature-unit">&#176;F</span>
+        </div>
+      </div>
+      <div class="info-section" id="info-section">
+        <ul>
+          <li class="weather-info"><strong id="status-display">Loading...</strong>
+          </li>
+          <li><strong>Sunrise: </strong><span id="sunrise-display">Loading...</span>
+          </li>
+          <li><strong>Sunset: </strong><span id="sunset-display">Loading...</span>
+          </li>
+          <li><strong>Wind: </strong><span id="wind-display">Loading...</span>
+          </li>
+          <li><strong>Humidity: </strong><span id="humidity-display">Loading...</span>
+          </li>
+          <li class="hidden-list"><strong>Wind Chill: </strong><span id="wind-chill-display">Loading...</span>
+          </li>
+          <li class="hidden-list"><strong>Visibility: </strong><span id="visibility-display">Loading...</span>
+          </li>
+          <li class="hidden-list"><strong>Wind Direction: </strong><span id="wind-direction-display">Loading...</span>
+          </li>
+          <li class="hidden-list"><strong>Pressure: </strong><span id="pressure-display">Loading...</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <footer id="footer" class="transition">
+      <section class="box1" id="box1" onclick=call()>
+        <header id="result0">Loading...</header>
+        <img id="img0" src="" alt="sorry">
+        <footer> <span id="high0">Loading...</span> <span>&deg;C/</span><span id="low0">Loading...</span><span>&deg;C</span>
         </footer>
-    </div>
+      </section>
+
+      <section class="box2" id="box2" onclick=callalert()>
+        <header id="result1">Loading...</header>
+        <img id="img1" src="" alt="sorry">
+        <footer> <span id="high1">Loading...</span> <span>&deg;C/</span><span id="low1">Loading...</span><span>&deg;C</span>
+        </footer>
+      </section>
+
+      <section class="box3" id="box3" onclick=callalert()>
+        <header id="result2">Loading...</header>
+        <img id="img2" src="" alt="sorry">
+        <footer> <span id="high2">Loading...</span> <span>&deg;C/</span><span id="low2">Loading...</span><span>&deg;C</span>
+        </footer>
+      </section>
+    </footer>
+  </div>
 </body>
 
 
