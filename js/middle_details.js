@@ -46,10 +46,15 @@ function show() {
   getJSON(
     "https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" +
     city + "')&format=json").then(setData, function(status) {
-    alert('Something went wrong.');
+    window.location("error.html")
   });
 
   function setData(data_raw) {
+    var count = data_raw['query']['count'];
+    if(count == 0)
+    {
+      window.location = 'error.html';
+    }
     document.getElementById("container").style.setProperty("display", "block", "important");
     var data = data_raw['query']['results']['channel']
     setTodayData(data);
