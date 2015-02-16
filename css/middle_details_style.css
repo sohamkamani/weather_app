@@ -26,7 +26,7 @@
 }*/
 .info-section {
   order: 2;
-  flex : 1.5 1 auto;
+  flex : 3 1 auto;
   align-self: auto;
   min-width: 0;
   min-height: auto;
