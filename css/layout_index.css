@@ -14,49 +14,44 @@ h1 {
   float: right;
 }
 .searchicon:hover {
-  border: 1px solid rgba(255,255,255,1);
-  -webkit-box-shadow: -7px 6px 21px -10px rgba(13,11,11, 1);
-  -moz-box-shadow: -7px 6px 21px -10px rgba(13,11,11, 1);
-  box-shadow: -7px 6px 21px -10px rgba(13,11,11, 1);
+  border: 1px solid rgba(255, 255, 255, 1);
+  -webkit-box-shadow: -7px 6px 21px -10px rgba(13, 11, 11, 1);
+  -moz-box-shadow: -7px 6px 21px -10px rgba(13, 11, 11, 1);
+  box-shadow: -7px 6px 21px -10px rgba(13, 11, 11, 1);
 }
-div
-{
- margin-left: 60px;
- margin-top: -15px;
+div {
+  margin-left: 60px;
+  margin-top: -15px;
   background: #303F9F;
   -webkit-box-shadow: -2px 3px 5px -1px rgba(50, 50, 50, 1);
   -moz-box-shadow: -2px 3px 5px -1px rgba(50, 50, 50, 1);
   box-shadow: -2px 3px 5px -1px rgba(50, 50, 50, 1);
   height: 40px;
-  width:80%;
+  width: 80%;
   display: none;
-
 }
-div span
-{
+div span {
   display: inline-block;
   color: white;
   font-weight: 900;
   font-size: 18px;
   margin-left: 10px;
 }
-input
-{
+input {
   border: 1px solid white;
   border-radius: 20px;
   margin-top: 9px;
   margin-left: 8px;
 }
-button{
+button {
   display: inline;
-vertical-align: middle;
-border-radius: 12px;
-background: #303F9F;
-color:white;
-border:1px solid white;
-margin-left: 10px;
-margin-top: -3px;
-
+  vertical-align: middle;
+  border-radius: 12px;
+  background: #303F9F;
+  color: white;
+  border: 1px solid white;
+  margin-left: 10px;
+  margin-top: -3px;
 }
 header {
   position: fixed;
