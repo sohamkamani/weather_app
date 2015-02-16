@@ -1,11 +1,11 @@
-
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" type="text/css" href="animation_effects.css">
+  <link rel="stylesheet" type="text/css" href="css/cloudAnimation.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link rel="stylesheet" type="text/css" href="css/layout_details.css">
   <link rel="stylesheet" type="text/css" href="css/middle_details_style.css">
@@ -14,6 +14,12 @@
 </head>
 
 <body>
+  <div class="animationContainer">
+    <div class="rainy"></div>
+    <div class="headText">
+      Loading...
+    </div>
+  </div>
   <div id="container">
     <header id="header" class="top-header transition">
       <h1 id="city-name">Loading...</h1>
@@ -26,8 +32,7 @@
           <img src="" alt="sorry" id="weather-picture">
         </div>
         <div class="big-temperature"><span class="temperature" id="temperature-display">0</span>
-          <br><span id="deg-c" class="temperature-unit">&#176;C</span><span id="deg-f"
-          class="temperature-unit">&#176;F</span>
+          <br><span id="deg-c" class="temperature-unit">&#176;C</span><span id="deg-f" class="temperature-unit">&#176;F</span>
         </div>
       </div>
       <div class="info-section" id="info-section">
@@ -42,14 +47,6 @@
           </li>
           <li><strong>Humidity: </strong><span id="humidity-display">Loading...</span>
           </li>
-          <li class="hidden-list"><strong>Wind Chill: </strong><span id="wind-chill-display">Loading...</span>
-          </li>
-          <li class="hidden-list"><strong>Visibility: </strong><span id="visibility-display">Loading...</span>
-          </li>
-          <li class="hidden-list"><strong>Wind Direction: </strong><span id="wind-direction-display">Loading...</span>
-          </li>
-          <li class="hidden-list"><strong>Pressure: </strong><span id="pressure-display">Loading...</span>
-          </li>
         </ul>
       </div>
     </div>
@@ -57,21 +54,21 @@
       <section class="box1" id="box1" onclick=call()>
         <header id="result0">Loading...</header>
         <img id="img0" src="" alt="sorry">
-        <footer> <span id="high0">Loading...</span> <span>&deg;C/</span><span id="low0">Loading...</span><span>&deg;C</span>
+        <footer> <span id="high0">Loading...</span> <span id="highUnit0">&deg;C/</span><span id="low0">Loading...</span><span id="lowUnit0">&deg;C</span>
         </footer>
       </section>
 
       <section class="box2" id="box2" onclick=callalert()>
         <header id="result1">Loading...</header>
         <img id="img1" src="" alt="sorry">
-        <footer> <span id="high1">Loading...</span> <span>&deg;C/</span><span id="low1">Loading...</span><span>&deg;C</span>
+        <footer> <span id="high1">Loading...</span> <span id="highUnit1">&deg;C/</span><span id="low1">Loading...</span><span id="lowUnit1">&deg;C</span>
         </footer>
       </section>
 
       <section class="box3" id="box3" onclick=callalert()>
         <header id="result2">Loading...</header>
         <img id="img2" src="" alt="sorry">
-        <footer> <span id="high2">Loading...</span> <span>&deg;C/</span><span id="low2">Loading...</span><span>&deg;C</span>
+        <footer> <span id="high2">Loading...</span> <span id="highUnit2">&deg;C/</span><span id="low2">Loading...</span><span id="lowUnit2">&deg;C</span>
         </footer>
       </section>
     </footer>
