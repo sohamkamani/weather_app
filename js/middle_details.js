@@ -50,6 +50,7 @@ function show() {
   });
 
   function setData(data_raw) {
+    document.getElementById("container").style.setProperty("display", "block", "important");
     var data = data_raw['query']['results']['channel']
     setTodayData(data);
     setForecastDataOfElement(data, 0);

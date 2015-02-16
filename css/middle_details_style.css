@@ -120,8 +120,8 @@ footer {
   overflow: hidden;
   height: 20%;
 }
-#container {/*
-  display: none !important;*/
+#container {
+  display: none !important;
   background-size: auto 100%;
   position: absolute;
   height: 100%;
