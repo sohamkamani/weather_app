@@ -38,15 +38,23 @@ function show() {
   var weather_picture = document.getElementById("weather-picture")
   var cityNameDisplay = document.getElementById("city-name")
 
-
+  var windChillDisplay = document.getElementById("wind-chill-display")
+  var visibilityDisplay = document.getElementById("visibility-display")
+  var windDirectionDisplay = document.getElementById("wind-direction-display")
+  var pressureDisplay = document.getElementById("pressure-display")
 
   getJSON(
     "https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" +
     city + "')&format=json").then(setData, function(status) {
-    alert('Something went wrong.');
+    window.location("error.html")
   });
 
   function setData(data_raw) {
+    var count = data_raw['query']['count'];
+    if(count == 0)
+    {
+      window.location = 'error.html';
+    }
     document.getElementById("container").style.setProperty("display", "block", "important");
     var data = data_raw['query']['results']['channel']
     setTodayData(data);
@@ -62,6 +70,10 @@ function show() {
     var sunsetTime = data['astronomy']['sunset']
     var windSpeed = data['wind']['speed'] + data['units']['speed']
     var humidity = data['atmosphere']['humidity'] + "%"
+    var windChill = farToCel(data['wind']['chill']) 
+    var visibility = data['atmosphere']['visibility']
+    var windDirection = data['wind']['direction']
+    var pressure = data['atmosphere']['pressure'] + data['units']['pressure']
     var cityName = data['location']['city'] + ", " + data['location']['country'];
 
     temperatureDisplay.replaceChild(document.createTextNode(temperature), temperatureDisplay.childNodes[0])
@@ -71,6 +83,10 @@ function show() {
     windDisplay.replaceChild(document.createTextNode(windSpeed), windDisplay.childNodes[0])
     humidityDisplay.replaceChild(document.createTextNode(humidity), humidityDisplay.childNodes[0])
     cityNameDisplay.replaceChild(document.createTextNode(cityName), cityNameDisplay.childNodes[0])
+    windChillDisplay.replaceChild(document.createTextNode(windChill), windChillDisplay.childNodes[0])
+    visibilityDisplay.replaceChild(document.createTextNode(visibility), visibilityDisplay.childNodes[0])
+    windDirectionDisplay.replaceChild(document.createTextNode(windDirection), windDirectionDisplay.childNodes[0])
+    pressureDisplay.replaceChild(document.createTextNode(pressure), pressureDisplay.childNodes[0])
     weather_picture.setAttribute("src", getThemeFor(weatherStatus.toLowerCase())[
       1]);
     setColorTheme(getThemeFor(weatherStatus.toLowerCase())[2]);
@@ -161,6 +177,7 @@ function call() {
 }
 
 function init() {
+
   show();
 
   var temperature = document.getElementById("temperature-display")
@@ -168,20 +185,28 @@ function init() {
   var far = document.getElementById("deg-f")
   var header = document.getElementById("header")
   var middleSection = document.getElementById("middle-info")
+  var weatherIcon = document.getElementById("weather-picture")
+  var infoSection = document.getElementById("info-section")
   var footer = document.getElementById("footer")
+  var hiddenList = document.getElementsByClassName("hidden-list")
   var high = [document.getElementById("high0"), document.getElementById("high1"), document.getElementById("high2")]
   var low = [document.getElementById("low0"), document.getElementById("low1"), document.getElementById("low2")]
   var highUnit = [document.getElementById("highUnit0"), document.getElementById("highUnit1"), document.getElementById("highUnit2")]
   var lowUnit = [document.getElementById("lowUnit0"), document.getElementById("lowUnit1"), document.getElementById("lowUnit2")]
-  var i
   cel.onclick = null;
   far.onclick = farClick
   header.onclick = headerAnimationGoDown
-  middleSection.onclick = middleAnimationComeOut
+  weatherIcon.onclick = middleAnimationComeOut
+  infoSection.onclick = middleAnimationComeOut
 
   function farClick() {
     newTemperature = document.createTextNode(celToFar(temperature.innerHTML))
     temperature.replaceChild(newTemperature, temperature.childNodes[0])
+    var windChillDisplay = document.getElementById("wind-chill-display")
+    var windChillUnit = document.getElementById("wind-chill-unit")
+    newWindChillTemperature = document.createTextNode(celToFar(windChillDisplay.innerHTML))
+    windChillDisplay.replaceChild(newWindChillTemperature, windChillDisplay.childNodes[0])
+    windChillUnit.replaceChild(document.createTextNode("°F"),windChillUnit.childNodes[0])
     for (i = 0; i < 3; i++) {
       highTemp = document.createTextNode(celToFar(high[i].innerHTML))
       high[i].replaceChild(highTemp, high[i].childNodes[0])
@@ -199,6 +224,11 @@ function init() {
   function celClick() {
     newTemperature = document.createTextNode(farToCel(temperature.innerHTML))
     temperature.replaceChild(newTemperature, temperature.childNodes[0])
+    var windChillDisplay = document.getElementById("wind-chill-display")
+    var windChillUnit = document.getElementById("wind-chill-unit")
+    newWindChillTemperature = document.createTextNode(farToCel(windChillDisplay.innerHTML))
+    windChillDisplay.replaceChild(newWindChillTemperature, windChillDisplay.childNodes[0])
+    windChillUnit.replaceChild(document.createTextNode("°C"),windChillUnit.childNodes[0])
     for (i = 0; i < 3; i++) {
       highTemp = document.createTextNode(farToCel(high[i].innerHTML))
       high[i].replaceChild(highTemp, high[i].childNodes[0])
@@ -220,8 +250,12 @@ function init() {
     header.classList.add("go-full")
     middleSection.classList.add("go-down")
     footer.classList.add("go-down")
+    for (var i = 0; i < hiddenList.length; i++) {
+      hiddenList[i].classList.remove("make-block")
+    }
     header.onclick = headerAnimationGoBackUp
-    middleSection.onclick = middleAnimationComeOut
+    weatherIcon.onclick = middleAnimationComeOut
+    infoSection.onclick = middleAnimationComeOut
 
   }
 
@@ -236,13 +270,21 @@ function init() {
     footer.classList.add("go-to-20")
     middleSection.classList.add("go-to-60")
     header.classList.add("go-to-20")
-    middleSection.onclick = middleAnimationComeBack
+    for (var i = 0; i < hiddenList.length; i++) {
+      hiddenList[i].classList.add("make-block")
+    }
+    weatherIcon.onclick = middleAnimationComeBack
+    infoSection.onclick = middleAnimationComeBack
   }
 
   function middleAnimationComeBack() {
     footer.classList.remove("go-to-20")
     middleSection.classList.remove("go-to-60")
     header.classList.remove("go-to-20")
-    middleSection.onclick = middleAnimationComeOut
+    for (var i = 0; i < hiddenList.length; i++) {
+      hiddenList[i].classList.remove("make-block")
+    }
+    weatherIcon.onclick = middleAnimationComeOut
+    infoSection.onclick = middleAnimationComeOut
   }
 }
