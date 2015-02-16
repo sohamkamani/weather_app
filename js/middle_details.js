@@ -51,7 +51,8 @@ function show() {
 
   function setData(data_raw) {
     var count = data_raw['query']['count'];
-    if(count == 0)
+    var title = data_raw['query']['results']['channel']['title'];
+    if(count == 0 || title.indexOf('Error') > -1 )
     {
       window.location = 'error.html';
     }
