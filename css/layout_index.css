@@ -3,7 +3,7 @@ body {
 }
 h1 {
   margin: 0px;
-  font-size: 6em;
+  font-size: 5em;
   font-weight: 300;
 }
 .searchicon {
@@ -20,14 +20,14 @@ h1 {
   box-shadow: -7px 6px 21px -10px rgba(13, 11, 11, 1);
 }
 div {
-  margin-left: 60px;
+  margin-left: 15px;
   margin-top: -15px;
   background: #303F9F;
   -webkit-box-shadow: -2px 3px 5px -1px rgba(50, 50, 50, 1);
   -moz-box-shadow: -2px 3px 5px -1px rgba(50, 50, 50, 1);
   box-shadow: -2px 3px 5px -1px rgba(50, 50, 50, 1);
   height: 40px;
-  width: 80%;
+  width: 100%;
   display: none;
 }
 div span {
