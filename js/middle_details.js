@@ -51,8 +51,7 @@ function show() {
 
   function setData(data_raw) {
     var count = data_raw['query']['count'];
-    if(count == 0)
-    {
+    if (count == 0) {
       window.location = 'error.html';
     }
     document.getElementById("container").style.setProperty("display", "block", "important");
@@ -70,7 +69,7 @@ function show() {
     var sunsetTime = data['astronomy']['sunset']
     var windSpeed = data['wind']['speed'] + data['units']['speed']
     var humidity = data['atmosphere']['humidity'] + "%"
-    var windChill = farToCel(data['wind']['chill']) 
+    var windChill = farToCel(data['wind']['chill'])
     var visibility = data['atmosphere']['visibility']
     var windDirection = data['wind']['direction']
     var pressure = data['atmosphere']['pressure'] + data['units']['pressure']
@@ -206,7 +205,7 @@ function init() {
     var windChillUnit = document.getElementById("wind-chill-unit")
     newWindChillTemperature = document.createTextNode(celToFar(windChillDisplay.innerHTML))
     windChillDisplay.replaceChild(newWindChillTemperature, windChillDisplay.childNodes[0])
-    windChillUnit.replaceChild(document.createTextNode("°F"),windChillUnit.childNodes[0])
+    windChillUnit.replaceChild(document.createTextNode("°F"), windChillUnit.childNodes[0])
     for (i = 0; i < 3; i++) {
       highTemp = document.createTextNode(celToFar(high[i].innerHTML))
       high[i].replaceChild(highTemp, high[i].childNodes[0])
@@ -228,7 +227,7 @@ function init() {
     var windChillUnit = document.getElementById("wind-chill-unit")
     newWindChillTemperature = document.createTextNode(farToCel(windChillDisplay.innerHTML))
     windChillDisplay.replaceChild(newWindChillTemperature, windChillDisplay.childNodes[0])
-    windChillUnit.replaceChild(document.createTextNode("°C"),windChillUnit.childNodes[0])
+    windChillUnit.replaceChild(document.createTextNode("°C"), windChillUnit.childNodes[0])
     for (i = 0; i < 3; i++) {
       highTemp = document.createTextNode(farToCel(high[i].innerHTML))
       high[i].replaceChild(highTemp, high[i].childNodes[0])

@@ -29,6 +29,8 @@ div {
   height: 40px;
   width: 80%;
   display: none;
+  position: fixed;
+  z-index: 1;
 }
 div span {
   display: inline-block;
