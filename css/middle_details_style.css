@@ -8,10 +8,10 @@ body{
 
 }
 .transition {
-  -webkit-transition: height 0.5s ease-in;
-  -moz-transition: height 0.5s ease-in;
-  -o-transition: height 0.5s ease-in;
-  transition: height 0.5s ease-in;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
 }
 .middle-info {
   position: relative;
@@ -34,7 +34,7 @@ body{
   order: 2;
   flex : 3 1 auto;
   align-self: auto;
-  min-width: 0;
+  min-width: 250px;
   min-height: auto;
 }
 .graphic-section {
@@ -67,7 +67,7 @@ li.weather-info {
   font-size: 1.75em;
   vertical-align: top;
 }
-.weather-icon {
+/*.weather-icon {
   text-align: center;
   width: 100%;
   border-bottom: 1px solid black;
@@ -77,10 +77,15 @@ li.weather-info {
   align-self: auto;
   min-width: 0;
   min-height: 0;
-}
-.weather-icon img {
+}*/
+.weather-icon {/*
   height: 100%;
-  width: 180px;
+  width: 100%;*/
+  order: 1;
+  flex : 1 1 auto;
+  align-self: auto;
+  min-width: 0;
+  min-height: 0;
 }
 .big-temperature {
   text-align: center;
