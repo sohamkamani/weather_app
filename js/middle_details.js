@@ -65,7 +65,7 @@ function show() {
     var sunsetTime = data['astronomy']['sunset']
     var windSpeed = data['wind']['speed'] + data['units']['speed']
     var humidity = data['atmosphere']['humidity'] + "%"
-    var windChill = farToCel(data['wind']['chill']) + "°C"
+    var windChill = farToCel(data['wind']['chill']) 
     var visibility = data['atmosphere']['visibility']
     var windDirection = data['wind']['direction']
     var pressure = data['atmosphere']['pressure'] + data['units']['pressure']
@@ -184,6 +184,10 @@ function init() {
   var infoSection = document.getElementById("info-section")
   var footer = document.getElementById("footer")
   var hiddenList = document.getElementsByClassName("hidden-list")
+  var high = [document.getElementById("high0"), document.getElementById("high1"), document.getElementById("high2")]
+  var low = [document.getElementById("low0"), document.getElementById("low1"), document.getElementById("low2")]
+  var highUnit = [document.getElementById("highUnit0"), document.getElementById("highUnit1"), document.getElementById("highUnit2")]
+  var lowUnit = [document.getElementById("lowUnit0"), document.getElementById("lowUnit1"), document.getElementById("lowUnit2")]
   cel.onclick = null;
   far.onclick = farClick
   header.onclick = headerAnimationGoDown
@@ -193,6 +197,19 @@ function init() {
   function farClick() {
     newTemperature = document.createTextNode(celToFar(temperature.innerHTML))
     temperature.replaceChild(newTemperature, temperature.childNodes[0])
+    var windChillDisplay = document.getElementById("wind-chill-display")
+    var windChillUnit = document.getElementById("wind-chill-unit")
+    newWindChillTemperature = document.createTextNode(celToFar(windChillDisplay.innerHTML))
+    windChillDisplay.replaceChild(newWindChillTemperature, windChillDisplay.childNodes[0])
+    windChillUnit.replaceChild(document.createTextNode("°F"),windChillUnit.childNodes[0])
+    for (i = 0; i < 3; i++) {
+      highTemp = document.createTextNode(celToFar(high[i].innerHTML))
+      high[i].replaceChild(highTemp, high[i].childNodes[0])
+      lowTemp = document.createTextNode(celToFar(low[i].innerHTML))
+      low[i].replaceChild(lowTemp, low[i].childNodes[0])
+      highUnit[i].innerHTML = "&deg;F/"
+      lowUnit[i].innerHTML = "&deg;F"
+    }
     far.onclick = null
     far.style.color = "#000"
     cel.onclick = celClick
@@ -202,6 +219,19 @@ function init() {
   function celClick() {
     newTemperature = document.createTextNode(farToCel(temperature.innerHTML))
     temperature.replaceChild(newTemperature, temperature.childNodes[0])
+    var windChillDisplay = document.getElementById("wind-chill-display")
+    var windChillUnit = document.getElementById("wind-chill-unit")
+    newWindChillTemperature = document.createTextNode(farToCel(windChillDisplay.innerHTML))
+    windChillDisplay.replaceChild(newWindChillTemperature, windChillDisplay.childNodes[0])
+    windChillUnit.replaceChild(document.createTextNode("°C"),windChillUnit.childNodes[0])
+    for (i = 0; i < 3; i++) {
+      highTemp = document.createTextNode(farToCel(high[i].innerHTML))
+      high[i].replaceChild(highTemp, high[i].childNodes[0])
+      lowTemp = document.createTextNode(farToCel(low[i].innerHTML))
+      low[i].replaceChild(lowTemp, low[i].childNodes[0])
+      highUnit[i].innerHTML = "&deg;C/"
+      lowUnit[i].innerHTML = "&deg;C"
+    }
     far.onclick = farClick
     far.style.color = "#CCC"
     cel.onclick = null
