@@ -174,6 +174,13 @@ function init() {
   show();
 
   var temperature = document.getElementById("temperature-display")
+  var high0 = document.getElementById("high0")
+  var high1 = document.getElementById("high1")
+  var high2 = document.getElementById("high2")
+  var low0 = document.getElementById("low0")
+  var low1 = document.getElementById("low1")
+  var low2 = document.getElementById("low2")
+
   var cel = document.getElementById("deg-c")
   var far = document.getElementById("deg-f")
   var header = document.getElementById("header")
@@ -190,7 +197,9 @@ function init() {
 
   function farClick() {
     newTemperature = document.createTextNode(celToFar(temperature.innerHTML))
+    newHigh0 = document.createTextNode(celToFar(high0.innerHTML))
     temperature.replaceChild(newTemperature, temperature.childNodes[0])
+    high0.replaceChild(newHigh0, high0.childNodes[0])
     far.onclick = null
     far.style.color = "#000"
     cel.onclick = celClick
