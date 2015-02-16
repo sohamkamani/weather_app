@@ -1,29 +1,29 @@
 window.onload = init
 
 var getJSON = function(url) {
-    return new Promise(function(resolve, reject) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('get', url, true);
-        xhr.responseType = 'json';
-        xhr.onload = function() {
-            var status = xhr.status;
-            if (status == 200) {
-                resolve(xhr.response);
-            } else {
-                reject(status);
-            }
-        };
-        xhr.send();
-    });
+  return new Promise(function(resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+      var status = xhr.status;
+      if (status == 200) {
+        resolve(xhr.response);
+      } else {
+        reject(status);
+      }
+    };
+    xhr.send();
+  });
 };
 
 function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
-        function(m, key, value) {
-            vars[key] = value;
-        });
-    return vars;
+  var vars = {};
+  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+    function(m, key, value) {
+      vars[key] = value;
+    });
+  return vars;
 }
 
 
@@ -109,22 +109,22 @@ function show() {
 }
 
 function setColorTheme(colors) {
-    document.getElementById("middle-info").style.backgroundColor = colors[0];
-    document.getElementById("box1").style.backgroundColor = colors[1];
-    document.getElementById("box2").style.backgroundColor = colors[2];
-    document.getElementById("box3").style.backgroundColor = colors[3];
+  document.getElementById("middle-info").style.backgroundColor = colors[0];
+  document.getElementById("box1").style.backgroundColor = colors[1];
+  document.getElementById("box2").style.backgroundColor = colors[2];
+  document.getElementById("box3").style.backgroundColor = colors[3];
 
 
 }
 
 function farToCel(f) {
-    var c = (f - 32) * 5 / 9;
-    return c.toFixed(1);
+  var c = (f - 32) * 5 / 9;
+  return c.toFixed(1);
 }
 
 function celToFar(c) {
-    var f = (c * 9) / 5 + 32;
-    return f.toFixed(1);
+  var f = (c * 9) / 5 + 32;
+  return f.toFixed(1);
 }
 
 
@@ -163,24 +163,18 @@ function getThemeFor(weather_text) {
 }
 
 function callalert() {
-    alert("More information is not available");
+  alert("More information is not available");
 }
 
 function call() {
-    alert("Click above for more info");
+  alert("Click above for more info");
 }
 
 function init() {
+
   show();
 
   var temperature = document.getElementById("temperature-display")
-  var high0 = document.getElementById("high0")
-  var high1 = document.getElementById("high1")
-  var high2 = document.getElementById("high2")
-  var low0 = document.getElementById("low0")
-  var low1 = document.getElementById("low1")
-  var low2 = document.getElementById("low2")
-
   var cel = document.getElementById("deg-c")
   var far = document.getElementById("deg-f")
   var header = document.getElementById("header")
@@ -197,9 +191,7 @@ function init() {
 
   function farClick() {
     newTemperature = document.createTextNode(celToFar(temperature.innerHTML))
-    newHigh0 = document.createTextNode(celToFar(high0.innerHTML))
     temperature.replaceChild(newTemperature, temperature.childNodes[0])
-    high0.replaceChild(newHigh0, high0.childNodes[0])
     far.onclick = null
     far.style.color = "#000"
     cel.onclick = celClick
@@ -228,7 +220,8 @@ function init() {
     header.onclick = headerAnimationGoBackUp
     weatherIcon.onclick = middleAnimationComeOut
     infoSection.onclick = middleAnimationComeOut
-    }
+
+  }
 
   function headerAnimationGoBackUp() {
     header.classList.remove("go-full")
