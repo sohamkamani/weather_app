@@ -1,34 +1,44 @@
 //last 4 items are add to demo the error prevention
 var cities = [{
     name: "Bangalore",
-    url: "flags/india.jpg"
+    url: "flags/india.jpg",
+    class: "hvr-bounce-to-right"
 }, {
     name: "London",
-    url: "flags/london.jpg"
+    url: "flags/london.jpg",
+    class: "hvr-bounce-to-right"
 }, {
     name: "Monaco",
-    url: "flags/monaco.jpg"
+    url: "flags/monaco.jpg",
+    class: "hvr-bounce-to-right"
 }, {
     name: "New york",
-    url: "flags/nyc.jpg"
+    url: "flags/nyc.jpg",
+    class: "hvr-bounce-to-right"
 }, {
     name: "Mumbai",
-    url: "flags/india.jpg"
+    url: "flags/india.jpg",
+    class: "hvr-bounce-to-right"
 }, {
     name: "Paris",
-    url: "flags/paris.jpg"
+    url: "flags/paris.jpg",
+    class: "hvr-bounce-to-right"
 }, {
     name: "Rio",
-    url: "flags/rio.jpg"
+    url: "flags/rio.jpg",
+    class: "hvr-bounce-to-right"
 }, {
     name: "Sydney",
-    url: "flags/sydney.jpg"
+    url: "flags/sydney.jpg",
+    class: "hvr-bounce-to-right"
 }, {
     name: "Tokyo",
-    url: "flags/tokyo.jpg"
+    url: "flags/tokyo.jpg",
+    class: "hvr-bounce-to-right"
 }, {
     name: "Miami",
-    url: "flags/nyc.jpg"
+    url: "flags/nyc.jpg",
+    class: "hvr-bounce-to-right"
 }];
 
 
@@ -51,6 +61,7 @@ var createListNode = function(city) {
                 cityName = document.createTextNode(city.name);
 
             li.setAttribute('id', city.name);
+            li.setAttribute('class', city.class);
             image.setAttribute('src', city.url);
 
             li.appendChild(image);
