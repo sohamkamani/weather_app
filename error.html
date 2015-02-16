@@ -22,8 +22,8 @@
             <h2>This city does not belong to Earth</h2>
             <div id="inputBox">
            
-                    <input type="text" placeholder="Enter any EARTH's city name" id="city" name="city" required>
-                    <button type="submit" onclick="redirect()">Get Weather</button>
+                    <input type="text" placeholder="Enter any EARTH's city name" id="city" name="city" required onkeydown="if (event.keyCode == 13) document.getElementById('but').click()">
+                    <button type="submit" id="but" onclick="redirect()">Get Weather</button>
               
             </div>
         </div>
