@@ -180,7 +180,7 @@ function init() {
   var far = document.getElementById("deg-f")
   var header = document.getElementById("header")
   var middleSection = document.getElementById("middle-info")
-  var weatherIcon = document.getElementById("weather-icon")
+  var weatherIcon = document.getElementById("weather-picture")
   var infoSection = document.getElementById("info-section")
   var footer = document.getElementById("footer")
   var hiddenList = document.getElementsByClassName("hidden-list")
