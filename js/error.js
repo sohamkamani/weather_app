@@ -10,3 +10,4 @@ function redirect()
   window.location = 'details.html?city=' + city;
 
 }
+
