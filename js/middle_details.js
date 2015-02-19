@@ -51,11 +51,13 @@ function show() {
 
   function setData(data_raw) {
     var count = data_raw['query']['count'];
-    var title = data_raw['query']['results']['channel']['title'];
-    if(count == 0 || title.indexOf('Error') > -1 )
+    // var title = data_raw['query']['results']['channel']['title'];
+
+    if(count == 0 )//|| title.indexOf('Error') > -1 )
     {
       window.location = 'error.html';
     }
+    document.getElementById("animationContainer").remove();
     document.getElementById("container").style.setProperty("display", "block", "important");
     var data = data_raw['query']['results']['channel']
     setTodayData(data);

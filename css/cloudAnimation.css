@@ -124,7 +124,7 @@
     bottom: 0px;
     left: 40%;
 }
-.animationContainer {
+#animationContainer {
     -webkit-transform: scale(.9);
     -ms-transform: scale(.9);
     transform: scale(.9);
