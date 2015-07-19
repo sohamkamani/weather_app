@@ -8,7 +8,3 @@ function redirect() {
   window.location = 'details.html?city=' + city;
 
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 5820e134e6178a762d3c1605c48870b7cd12a1fc
